@@ -13,6 +13,7 @@
 		A0581D2528FB93D900B7A066 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0581D2328FB93D900B7A066 /* Main.storyboard */; };
 		A0581D2728FB93D900B7A066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0581D2628FB93D900B7A066 /* Assets.xcassets */; };
 		A0581D2A28FB93D900B7A066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0581D2828FB93D900B7A066 /* LaunchScreen.storyboard */; };
+		A0581D3328FB963B00B7A066 /* IGDB-SWIFT-API in Frameworks */ = {isa = PBXBuildFile; productRef = A0581D3228FB963B00B7A066 /* IGDB-SWIFT-API */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0581D3328FB963B00B7A066 /* IGDB-SWIFT-API in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = ggTracker;
+			packageProductDependencies = (
+				A0581D3228FB963B00B7A066 /* IGDB-SWIFT-API */,
+			);
 			productName = ggTracker;
 			productReference = A0581D1A28FB93D900B7A066 /* ggTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = A0581D1128FB93D900B7A066;
+			packageReferences = (
+				A0581D3128FB963B00B7A066 /* XCRemoteSwiftPackageReference "IGDB-SWIFT-API" */,
+			);
 			productRefGroup = A0581D1B28FB93D900B7A066 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0581D3128FB963B00B7A066 /* XCRemoteSwiftPackageReference "IGDB-SWIFT-API" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/husnjak/IGDB-SWIFT-API";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0581D3228FB963B00B7A066 /* IGDB-SWIFT-API */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0581D3128FB963B00B7A066 /* XCRemoteSwiftPackageReference "IGDB-SWIFT-API" */;
+			productName = "IGDB-SWIFT-API";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A0581D1228FB93D900B7A066 /* Project object */;
 }
