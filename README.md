@@ -90,8 +90,6 @@ Our application, GGTracker, allows users to track their video game catalog as we
 * Digital Wireframe
 <img src="ggTracker Digital Wireframe.png" width="800">
 
-### [BONUS] Interactive Prototype
-
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
