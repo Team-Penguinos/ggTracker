@@ -82,13 +82,13 @@ Our application, GGTracker, allows users to track their video game catalog as we
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-*Hand skethed wireframe
-<img src="ggTracker Physical Wireframe.png" width="800">
+* Hand skethed wireframe
+<img src="ggTracker Physical Wireframe.png" width="300">
 
 
 ### [BONUS] Digital Wireframes & Mockups
-*Digital Wireframe
-<img src="https://imgur.com/a/1gcKaML" width="">
+* Digital Wireframe
+<img src="ggTracker Digital Wireframe.png" width="300">
 
 ### [BONUS] Interactive Prototype
 
