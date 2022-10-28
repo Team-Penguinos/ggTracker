@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-Our application, GGTracker, allows users to track their video game catalog as well as track their progress through completing different video games. User's will be able to give the game a rating based on their experience through a playthrough through the game. 
+Our application, GGTracker, allows users to track their video game catalog as well as track their progress through completing different video games. Users will be able to give the game a rating based on their experience through a playthrough through the game. 
 
 ### App Evaluation
 
@@ -27,8 +27,11 @@ Our application, GGTracker, allows users to track their video game catalog as we
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+* User sees an app icon on the home screen and a styled launch screen.
+* User can view and scroll through 
 * User can login.
 * User can logout.
+* User can stay logged in acros
 * User can add a game to their game list.
 * User can mark the progress they have made through a game.
 * User can view their game list.
