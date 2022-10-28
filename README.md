@@ -16,11 +16,11 @@ Our application, GGTracker, allows users to track their video game catalog as we
 ### App Evaluation
 
 - **Category:** Video Games / Social Networking
-- **Mobile:** Our application would be primarily designed for mobile use, specifically iOS, but could be adapted for access on a web application. We would try to keep the functionality the same between different versions of applications.
-- **Story:** Allows users to track the video games that they have played or are currently playing. Users will be able to share their list with other users as well as view other users lists.
-- **Market:** Our application would target users that play video games. To maintain safety, video game titles of a certain age rating would only be viewable by of-age users.
+- **Mobile:** Our application would be primarily designed for mobile use, specifically iOS. We would try to abstract the functionality to keep the code relatively the same if a different type of application for ggTracker was to be created in the future.
+- **Story:** Allows users to track the video games that they have played or are currently playing in a simplistic, easy way.
+- **Market:** Our application would target users that enjoy and play video games. We aim to have our app be an app that users come back to frequently as they continue to play through new trending games. 
 - **Habit:** The application would encourage users to maintain their video game list, but it would be up to the user to keep their list maintained.
-- **Scope:** First the app would be be applicable to individual users so that they could manage their played games. This could then evolve into a larger social network where users can find like minded individuals. Our app could eventually be used by TwitchTV or other game publishers to promote a product.
+- **Scope:** The app would be be applicable to individual users so that they could manage their played games. This could then evolve into a larger social network where users can find like minded individuals. Our app could eventually be used by TwitchTV or other game publishers to promote a product.
 
 ## Product Spec
 
@@ -28,25 +28,27 @@ Our application, GGTracker, allows users to track their video game catalog as we
 
 **Required Must-have Stories**
 * User sees an app icon on the home screen and a styled launch screen.
-* User can view and scroll through 
 * User can login.
 * User can logout.
-* User can stay logged in acros
-* User can add a game to their game list.
-* User can mark the progress they have made through a game.
-* User can view their game list.
+* User stays logged in across restarts. 
+* User can view and scroll through a list of top games on the discover page.
+* User can add a game to their home page.
+* User can edit their hours, rating, and status for games added to their home page.
 * User can view the creators of the app.
 
 **Optional Nice-to-have Stories**
 
 * User can search for games on the discover page using a search bar.
-* User can view a details screen for each game on the discover page.
+* User can view the details for a particular game on the discover page.
 * User can wishlist a game.
-* User can login with Google, Twitter, or Facebook. 
+* User can view all of their wishlisted games. 
+* User can leave a note on games from their home page. 
+* User can login with Google, Twitter, and/or Facebook. 
 
 ### 2. Screen Archetypes
 
-* Login/Register - User sign up or logs into their account
+* Login/Register
+   * Users are able to sign up or log into their account.
    * When opening the application for the first time the user is prompted to log in to their profile in order view the list of available games.
 
 * Discover 
@@ -88,10 +90,10 @@ Our application, GGTracker, allows users to track their video game catalog as we
 * Hand skethed wireframe
 <img src="ggTracker Physical Wireframe.png" width="800">
 
-
 ### [BONUS] Digital Wireframes & Mockups
 * Digital Wireframe
 <img src="ggTracker Digital Wireframe.png" width="800">
+
 
 ## Schema 
 [This section will be completed in Unit 9]
