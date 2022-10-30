@@ -17,7 +17,7 @@ Our application, GGTracker, allows users to track their video game catalog as we
 
 - **Category:** Video Games / Social Networking
 - **Mobile:** Our application would be primarily designed for mobile use, specifically iOS. We would try to abstract the functionality to keep the code relatively the same if a different type of application for ggTracker was to be created in the future.
-- **Story:** Allows users to track the video games that they have played or are currently playing in a simplistic, easy way.
+- **Story:** ggTracker allows users to track the video games that they have played or are currently playing in a simplistic, easy way.
 - **Market:** Our application would target users that enjoy and play video games. We aim to have our app be an app that users come back to frequently as they continue to play through new trending games. 
 - **Habit:** The application would encourage users to maintain their video game list, but it would be up to the user to keep their list maintained.
 - **Scope:** The app would be be applicable to individual users so that they could manage their played games. This could then evolve into a larger social network where users can find like minded individuals. Our app could eventually be used by TwitchTV or other game publishers to promote a product.
@@ -42,31 +42,37 @@ Our application, GGTracker, allows users to track their video game catalog as we
 * User can view the details for a particular game on the discover page.
 * User can wishlist a game.
 * User can view all of their wishlisted games. 
+* User can change default settings in a settings area.
 * User can leave a note on games from their home page. 
 * User can login with Google, Twitter, and/or Facebook. 
 
 ### 2. Screen Archetypes
 
-* Login/Register
+* Login/Register Screen
    * Users are able to sign up or log into their account.
-   * When opening the application for the first time the user is prompted to log in to their profile in order view the list of available games.
+   * When opening the application for the first time, the user is prompted to log in to their profile in order view the list of available games.
 
-* Discover 
-    * Users are able to view the available list of games that are available to add to their collection. Shows the cover art for each game. Users are able to add the game to their home screen or wishlist.
+* Discover Screen
+    * Users are able to view the available list of games that are available to add to their collection. 
+    * Shows the cover art for each game. 
+    * Users are able to add the game to their home screen or wishlist.
    
-* Home
-    * Contains the list of the games that the user has added to their list of played games. Displays the game activity, amount of logged hours, and the user's rating for the game. 
+* Home Screen
+    * Contains the list of the games that the user has added to their list of played games. 
+    * Displays the game activity, amount of logged hours, and the user's rating for the game. 
  
-* Game Details (Optional Screen)
-    * When the game is selected from the Home or Discover screen, the games cover art and synopsis are shown to the user. Allows the user to add the game to their home screen or wishlist.
+* Game Details (Optional Screen) Screen
+    * Shows a particular game's cover art and synopsis to the user if they click that game on the discover page. 
+    * Allows the user to add the game to their home screen (or wishlist, if that optional story is implemented).
 
-* Edit Game
-    * Allows the user to edit the amount of hours played for a game as well as update the rating given for the game.
+* Edit Game Screen
+    * Allows the user to edit their hours, rating, and status for a given game listed on their home page.
 
-* Wishlist (Optional Screen)
-    * Shows the list of the games that the user would like to play at some point in the future. Displays the cover art for the game displayed.
+* Wishlist (Optional Screen) Screen
+    * Shows the list of the games that the user would like to play at some point in the future. 
+    * Displays the cover art for the game displayed.
 
-* About
+* About Screen
     * Shows the user information about the team that has developed the application. 
 
 ### 3. Navigation
@@ -79,15 +85,14 @@ Our application, GGTracker, allows users to track their video game catalog as we
 
 **Flow Navigation** (Screen to Screen)
 
-* Login Screen -> Account Creation if the user does not have an account
-* Discover Tab -> Games details screen
-* Wishlist -> Games details screen
-* Discover Tab/Wishlist/Home Screen -> Settings Screen
+* Login/Register Screen -> Home Screen (if the user is successfully logged into their account or has registered a new account)
+* Discover Tab -> Games Details Screen
+* Wishlist -> Games Details Screen
+* Discover Tab/Wishlist/Home Screen -> About Screen
 * Home Screen -> Edit Game Details Fields
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-* Hand skethed wireframe
+* Hand-Sketched Wireframe
 <img src="ggTracker Physical Wireframe.png" width="800">
 
 ### [BONUS] Digital Wireframes & Mockups
