@@ -98,7 +98,7 @@ Our application, GGTracker, allows users to track their video game catalog as we
 ### [BONUS] Digital Wireframes & Mockups
 * Digital Wireframe
 <img src="ggTracker Digital Wireframe.png" width="800">
-To see all of the individual frames of the digital wireframe more clearly, please navigate to the file "ggTracker Digital Wireframe Individual Frames Compressed File.pdf."
+To see all of the individual frames of the digital wireframe more clearly, please navigate to the "ggTracker Digital Wireframe Individual Frames Compressed File.pdf" file.
 
 
 ## Schema 
