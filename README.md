@@ -1,7 +1,7 @@
 Original App Design Project
 ===
 
-# GGTracker
+# ggTracker
 
 ## Table of Contents
 1. [Overview](#Overview)
