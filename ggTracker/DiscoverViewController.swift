@@ -8,7 +8,22 @@
 import UIKit
 
 class DiscoverViewController: UIViewController {
-
+    
+    //outlets
+    @IBOutlet weak var gameTitle: UILabel!
+    @IBOutlet weak var gameDescription: UILabel!
+    
+    @IBOutlet weak var wishlistButton: UIButton!
+    @IBOutlet weak var addHomeButton: UIButton!
+    
+    //actions
+    @IBAction func favoriteGame(_ sender: Any) {
+    }
+    
+    @IBAction func addToHome(_ sender: Any) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
