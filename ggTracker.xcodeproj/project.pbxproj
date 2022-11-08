@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19AA53DA2919F06200A84AA8 /* gameGollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AA53D92919F06200A84AA8 /* gameGollectionViewCell.swift */; };
 		A0581D1E28FB93D900B7A066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0581D1D28FB93D900B7A066 /* AppDelegate.swift */; };
 		A0581D2028FB93D900B7A066 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0581D1F28FB93D900B7A066 /* SceneDelegate.swift */; };
 		A0581D2228FB93D900B7A066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0581D2128FB93D900B7A066 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19AA53D92919F06200A84AA8 /* gameGollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameGollectionViewCell.swift; sourceTree = "<group>"; };
 		A0581D1A28FB93D900B7A066 /* ggTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0581D1D28FB93D900B7A066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0581D1F28FB93D900B7A066 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				A0581D2628FB93D900B7A066 /* Assets.xcassets */,
 				A0581D2828FB93D900B7A066 /* LaunchScreen.storyboard */,
 				A0581D2B28FB93D900B7A066 /* Info.plist */,
+				19AA53D92919F06200A84AA8 /* gameGollectionViewCell.swift */,
 			);
 			path = ggTracker;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19AA53DA2919F06200A84AA8 /* gameGollectionViewCell.swift in Sources */,
 				A0581D2228FB93D900B7A066 /* ViewController.swift in Sources */,
 				A0581D1E28FB93D900B7A066 /* AppDelegate.swift in Sources */,
 				A0581D2028FB93D900B7A066 /* SceneDelegate.swift in Sources */,
@@ -295,7 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EU8CB76HT6;
+				DEVELOPMENT_TEAM = 349SPJAZWY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ggTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -312,7 +316,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EU8CB76HT6;
+				DEVELOPMENT_TEAM = 349SPJAZWY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ggTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -340,7 +344,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
