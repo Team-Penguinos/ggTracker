@@ -1,4 +1,4 @@
-Original App Design Project - Group 11
+Original App Design Project - Group 2
 ===
 
 # ggTracker
