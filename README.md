@@ -2,7 +2,6 @@ Original App Design Project - Group 2
 ===
 
 # ggTracker
-# ggTracker
 A iOS app to track your gaming habits
 
 ## Table of Contents
