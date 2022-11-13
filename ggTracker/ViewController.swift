@@ -34,6 +34,11 @@ extension ViewController: UICollectionViewDataSource{
         //Games is something in the API
         cell.setup(with: games[indexPath.row])
         return cell
+    let apiCaller = IGDB_APICaller()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        apiCaller.getTopGames()
+        // Do any additional setup after loading the view.
     }
 }
 
