@@ -8,11 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    /*
     let apiCaller = IGDB_APICaller()
     override func viewDidLoad() {
         super.viewDidLoad()
         apiCaller.getTopGames()
         // Do any additional setup after loading the view.
     }
+     */
 }
 

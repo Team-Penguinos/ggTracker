@@ -10,6 +10,7 @@ import IGDB_SWIFT_API
 
 class IGDB_APICaller {
     
+    /*
     struct AccessToken: Decodable {
         var access_token: String
         var expires_in: Int
@@ -39,4 +40,5 @@ class IGDB_APICaller {
             print("Error: \(error)")
         }
     }
+     */
 }
