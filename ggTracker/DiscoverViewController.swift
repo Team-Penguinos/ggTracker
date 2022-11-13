@@ -10,7 +10,7 @@ import IGDB_SWIFT_API
 
 class DiscoverViewController: UIViewController {
     //global variable
-    
+    var apiCaller = IGDB_APICaller()
     
     
     //outlets
@@ -27,6 +27,19 @@ class DiscoverViewController: UIViewController {
     @IBAction func addToHome(_ sender: Any) {
     }
     
+    @IBAction func testGame(_ sender: Any) {
+        Task {
+            do {
+                let game = try await apiCaller.GetGame(GameID: 1942)
+                print("\(game)")
+            }
+            catch {
+                print("\(error)")
+            }
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +47,6 @@ class DiscoverViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func LoadGame() async {
-        do {
-            
-        }
-        catch {
-            
-        }
-    }
     /*
     // MARK: - Navigation
 

@@ -86,4 +86,28 @@ class IGDB_APICaller {
             }
         }
     }
+    
+    func GetGame(GameID: Int) async throws -> Game {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var gamesList: [Game] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "name, rating, summary, release_dates, cover")
+                        .where(query: "id = \(GameID)")
+                    wrapper.jsonGames(apiCalypse: apicalypse) { games in
+                        gamesList = self.convertJsonDataToGameObject(games)
+                        continuation.resume(returning: gamesList[0])
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("Error fetching access token: \(error)")
+                }
+            }
+        }
+    }
+    
 }

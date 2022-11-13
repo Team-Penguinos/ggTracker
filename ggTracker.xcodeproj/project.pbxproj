@@ -16,7 +16,7 @@
 		A0581D3328FB963B00B7A066 /* IGDB-SWIFT-API in Frameworks */ = {isa = PBXBuildFile; productRef = A0581D3228FB963B00B7A066 /* IGDB-SWIFT-API */; };
 		A06894BA2919EC02006606F2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06894B92919EC02006606F2 /* GameModel.swift */; };
 		A06DFF3E29076781005F435B /* IGDB_APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DFF3D29076781005F435B /* IGDB_APICaller.swift */; };
-		BD294D4929207E3F003D907E /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294D4829207E3F003D907E /* DiscoverViewController.swift */; };
+		BD294D4B2920922F003D907E /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD294D4A2920922F003D907E /* DiscoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		A0581D2B28FB93D900B7A066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06894B92919EC02006606F2 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		A06DFF3D29076781005F435B /* IGDB_APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDB_APICaller.swift; sourceTree = "<group>"; };
-		BD294D4829207E3F003D907E /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		BD294D4A2920922F003D907E /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		A0581D1C28FB93D900B7A066 /* ggTracker */ = {
 			isa = PBXGroup;
 			children = (
-				BD294D4829207E3F003D907E /* DiscoverViewController.swift */,
+				BD294D4A2920922F003D907E /* DiscoverViewController.swift */,
 				A06DFF3D29076781005F435B /* IGDB_APICaller.swift */,
 				A0581D1D28FB93D900B7A066 /* AppDelegate.swift */,
 				A0581D1F28FB93D900B7A066 /* SceneDelegate.swift */,
@@ -157,9 +157,8 @@
 			files = (
 				A0581D2228FB93D900B7A066 /* ViewController.swift in Sources */,
 				A0581D1E28FB93D900B7A066 /* AppDelegate.swift in Sources */,
-
-
 				A06DFF3E29076781005F435B /* IGDB_APICaller.swift in Sources */,
+				BD294D4B2920922F003D907E /* DiscoverViewController.swift in Sources */,
 				A0581D2028FB93D900B7A066 /* SceneDelegate.swift in Sources */,
 				A06894BA2919EC02006606F2 /* GameModel.swift in Sources */,
 			);
