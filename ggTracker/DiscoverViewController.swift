@@ -39,6 +39,17 @@ class DiscoverViewController: UIViewController {
         }
     }
     
+    func setGame(GameID: Int) async -> Game? {
+        var game: Game? = nil
+        do {
+                game = try await apiCaller.GetGame(GameID: 1942)
+                return game
+            }
+            catch {
+                print("\(error)")
+            }
+        return game
+    }
     
     
     override func viewDidLoad() {
