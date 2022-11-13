@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     let apiCaller = IGDB_APICaller()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+ 
     }
 }
 

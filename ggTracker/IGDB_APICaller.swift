@@ -21,7 +21,7 @@ class IGDB_APICaller {
     let clientSecret = "aczebezd76a8pcsl2uyehwl1m4fkdl"
     var globalAccessToken = ""
     
-    private func requestAccessToken(completion: @escaping (String) -> ()) {
+    private func requestAccessToken() async throws -> String {
         let url = URL(string: "https://id.twitch.tv/oauth2/token?")
         guard let requestUrl = url else { fatalError() }
         // Prepare URL Request Object
@@ -33,17 +33,19 @@ class IGDB_APICaller {
         // Set HTTP Request Body
         request.httpBody = postString.data(using: String.Encoding.utf8);
         // Perform HTTP Request
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error took place \(error)")
-               
+        return await withCheckedContinuation { continuation in
+            let task = URLSession.shared.dataTask(with: request) { (data1, response, error) in
+                if let error = error {
+                    print("Error took place \(error)")
+                    
+                }
+                if let data = data1 {
+                    let newAccessToken: AccessToken = try! JSONDecoder().decode(AccessToken.self, from: data)
+                    continuation.resume(returning: newAccessToken.access_token)
+                }
             }
-            if let data = data {
-                let newAccessToken: AccessToken = try! JSONDecoder().decode(AccessToken.self, from: data)
-                completion(newAccessToken.access_token)
-            }
+            task.resume()
         }
-        task.resume()
     }
     
     private func convertJsonDataToGameObject(_ data: String) -> [Game] {
@@ -53,29 +55,34 @@ class IGDB_APICaller {
         let jsonData = Data(data.utf8)
         do {
             gamesList = try decoder.decode([Game].self, from: jsonData)
-            print("\(gamesList)")
         } catch {
             print(error)
         }
         return gamesList
     }
     
-    func getTopGames(numOfGames: Int, completion: @escaping ([Game]) -> ()) {
-        requestAccessToken { accessToken in
-            self.globalAccessToken = accessToken
-            let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
-            var gamesList: [Game] = []
-            let apicalypse = APICalypse()
-                .fields(fields: "name, rating, summary, release_dates, cover")
-                .limit(value: Int32(numOfGames))
-                .sort(field: "rating", order: .DESCENDING)
-                .where(query: "rating > 95")
-            
-            wrapper.jsonGames(apiCalypse: apicalypse) { games in
-                gamesList = self.convertJsonDataToGameObject(games)
-                completion(gamesList)
-            } errorResponse: { error in
-                print("\(error)")
+    func getTopGames(numOfGames: Int) async throws -> [Game] {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var gamesList: [Game] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "name, rating, summary, release_dates, cover")
+                        .limit(value: Int32(numOfGames))
+                        .sort(field: "rating", order: .DESCENDING)
+                        .where(query: "rating > 95")
+                    
+                    wrapper.jsonGames(apiCalypse: apicalypse) { games in
+                        gamesList = self.convertJsonDataToGameObject(games)
+                        continuation.resume(returning: gamesList)
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("Error fetching access token: \(error)")
+                }
             }
         }
     }
