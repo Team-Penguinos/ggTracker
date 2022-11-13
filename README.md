@@ -1,7 +1,8 @@
-Original App Design Project - Group 11
+Original App Design Project - Group 2
 ===
 
 # ggTracker
+A iOS app to track your gaming habits
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -56,11 +57,11 @@ Our application, GGTracker, allows users to track their video game catalog as we
     * Users are able to view the available list of games that are available to add to their collection. 
     * Shows the cover art for each game. 
     * Users are able to add the game to their home screen or wishlist.
-   
+
 * Home Screen
     * Contains the list of the games that the user has added to their list of played games. 
     * Displays the game activity, amount of logged hours, and the user's rating for the game. 
- 
+
 * Game Details (Optional Screen) Screen
     * Shows a particular game's cover art and synopsis to the user if they click that game on the discover page. 
     * Allows the user to add the game to their home screen (or wishlist, if that optional story is implemented).
@@ -102,10 +103,98 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
 
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+
+   
+#### Users
+*This is for the users of the system.*
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | Username      | String   | User's username|
+   | Password      | String   | User's password |
+   
+   
+#### Favorites
+*This is for the games listed on a user's home page.*
+ 
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | UserID      | ID   | Reference to the Users table|
+   | GameID        | ID   | Used to get the games information from the API call|
+   | Status     | Integer   | Distinguish between the games different states  |
+   | UserRating     | Integer   | User's rating for the game |
+   | UserHours      | Integer   | User's hours for the game |
+   
+   
+#### Wishlist (Optional)
+*This is for the games listed on a user's wishlist.*
+ 
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | UserID        | ID       | Reference to the Users table|
+   | GameID        | ID       | Used to get the games information from the API call|
+
+
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of network requests by screen
+   - **Home Screen**
+      - (Read/GET) Query all games in the userHomeList
+      - (Delete) Delete a game from the userHomeList
+   - **Edit Screen**
+      - (Update/POST) Update status of the game
+      - (Update/POST) Update user rating of the game
+      - (Update/POST) Update hours played of game
+   - **Discover Screen**
+      - (Read/GET) Get list of top games from IGDB database
+        ```swift
+        func getTopGames()  {
+        requestAccessToken { accessToken in
+            let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+            
+            let apicalypse = APICalypse()
+                .fields(fields: "name, rating, summary, release_dates, cover")
+                .limit(value: 100)
+                .sort(field: "rating", order: .DESCENDING)
+                .where(query: "rating > 95")
+            
+            wrapper.jsonGames(apiCalypse: apicalypse) { games in
+                print("\(games)")
+            } errorResponse: { error in
+                print("\(error)")
+            }
+        }
+         ```
+   - **Details Screen**
+      - (Read/GET) Query IGDB database for game details
+      - (Create/POST) Add a game to userHomeList
+      - (Create/POST) Add a game to userWishlist (optional)
+   - **Wishlist Screen** (Optional Screen)
+      - (Read/GET) Query all games in the userWishlist (optional)
+      - (Delete) Delete a game from the userWishlist (optional)
+
+
+### ENDPOINTS
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | name          | String   | Name of the game|
+   | rating        | Double   | Rating of the game |
+   | status        | String   | Status of the game |
+   | cover         | String   | URL to poster image |
+   | summary       | String   | Description of the game |
+   | release date  | ID       | ID referring to release date |
+
+
+
+##### IGDB Game Database API
+- Base URL - [https://api-docs.igdb.com/v4/games](https://api-docs.igdb.com/v4/games)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /name | Name of game
+    `GET`    | /rating| Average IGDB user rating
+    `GET`    | /summary   | A description of the game
+    `GET`    | /release_dates | Release dates of this game
+    `GET`    | /cover | Reference ID for cover
+
