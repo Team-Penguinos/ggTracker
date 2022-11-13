@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import IGDB_SWIFT_API
 
 class DiscoverViewController: UIViewController {
+    //global variable
+    
+    
     
     //outlets
     @IBOutlet weak var gameTitle: UILabel!
@@ -30,7 +34,14 @@ class DiscoverViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    func LoadGame() async {
+        do {
+            
+        }
+        catch {
+            
+        }
+    }
     /*
     // MARK: - Navigation
 
