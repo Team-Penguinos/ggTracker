@@ -6,26 +6,31 @@
 //
 
 import UIKit
+import IGDB_SWIFT_API
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
   
 
     //MARK: - Outlets
     @IBOutlet weak var homeTableView: UITableView!
+  
+    
+    
+    
+    //MARK: - Global Variables
+    let APICaller = IGDB_APICaller()
     
     
     
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
         
         homeTableView.dataSource = self
         homeTableView.delegate = self
         
-        //creating a database reference
-        //self.ref = Database.database().reference()
         
         
         //self.tableView.reloadData()
@@ -70,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
-
+    
     
 
     /*
