@@ -261,7 +261,7 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
         * Created a settings icon at the top of the view, which will be used to navigate to the settings page
 * I also created the edit screen. I will be continuing the edit screen in the upcoming sprint. 
 * Lastly, I have been helping manage the GitHub Project Board, especially the issues.
-<img src="sprint-1-gifs/DeVito-Sprint-1" width="500">
+<img src="sprint-1-gifs/DeVito-Sprint-1.gif" width="500">
 
 ---
 
@@ -276,7 +276,7 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
         * Wrote function to convert JSON data into a Swift object called Game
         * Wrote the data model for a game
         * Helped deal with environment and build issues for team members getting set up with the project
-<img src="sprint-1-gifs/Devlin-Sprint-1" width="500">
+<img src="sprint-1-gifs/Devlin-Sprint-1.gif" width="500">
 
 ---
 
@@ -288,11 +288,11 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
         * Created the controls that will add a game to the user's home screen or favorites.
         * Created the image view for the game's cover art
         * 
-<img src="sprint-1-gifs/Shields-Sprint-1" width="500">
+<img src="sprint-1-gifs/Shields-Sprint-1.gif" width="500">
 
 ---
 
 #### Kyle Deveaux
 * 
 
-<img src="sprint-1-gifs/Deveaux-Sprint-1" width="500">
+<img src="sprint-1-gifs/Deveaux-Sprint-1.gif" width="500">
