@@ -276,7 +276,7 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
         * Wrote function to convert JSON data into a Swift object called Game
         * Wrote the data model for a game
         * Helped deal with environment and build issues for team members getting set up with the project
-<img src="sprint-1-gifs/Devlin-Sprint-1.gif" width="500">
+<img src="sprint-1-gifs/Devlin-Sprint-1.gif">
 
 ---
 
