@@ -293,6 +293,14 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
 ---
 
 #### Kyle Deveaux
-* 
+* During this sprint, I worked on creating the about page. The page includes everyone who worked on the Team Penguinos project and features a static image of our mascot. I also started to work ahead on the collection view for the discover screen.
+    * List of things I accomplished:
+        * Set up the about page
+        * Listed the team names
+        * Included static image and styling to the about page
+        * Prepared for upcoming sprint by starting the CollectionView
+            * Set up the view controller for the discover screen in the main storyboard
+            * Coded view controller
+            * Waiting on API to start the implementation into current code
 
 <img src="sprint-1-gifs/Deveaux-Sprint-1.gif" width="800">
