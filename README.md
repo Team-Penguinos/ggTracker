@@ -261,7 +261,7 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
         * Created a settings icon at the top of the view, which will be used to navigate to the settings page
 * I also created the edit screen. I will be continuing the edit screen in the upcoming sprint. 
 * Lastly, I have been helping manage the GitHub Project Board, especially the issues.
-<img src="sprint-1-gifs/DeVito-Sprint-1.gif" height="500" width="300">
+<img src="sprint-1-gifs/DeVito-Sprint-1.gif" height="500" width="200">
 
 ---
 
