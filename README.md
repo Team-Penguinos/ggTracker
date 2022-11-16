@@ -261,7 +261,7 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
         * Created a settings icon at the top of the view, which will be used to navigate to the settings page
 * I also created the edit screen. I will be continuing the edit screen in the upcoming sprint. 
 * Lastly, I have been helping manage the GitHub Project Board, especially the issues.
-<img src="sprint-1-gifs/DeVito-Sprint-1.gif" width="500">
+<img src="sprint-1-gifs/DeVito-Sprint-1.gif" width="800">
 
 ---
 
@@ -281,18 +281,18 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
 ---
 
 #### Kirk Shields
-* I worked on creating the database for parse and began to create the view that would be shown to the user for adding a game to either their home screen or favorites.
+* I worked on creating the database for Parse and began to create the view that would be shown to the user for adding a game to either their home screen or favorites.
     * List of things I accomplished:
-        * Set up the database and parse tables for the game information
-        * Created the game details view. Shows the information about the game to the user
-        * Created the controls that will add a game to the user's home screen or favorites.
+        * Set up the database and Parse tables for the game information
+        * Created the game details view, which shows the information about the game to the user
+        * Created the controls that will add a game to the user's home screen or favorites
         * Created the image view for the game's cover art
-        * 
-<img src="sprint-1-gifs/Shields-Sprint-1.gif" width="500">
+        * Created a function that will give me specific game details from the API
+<img src="sprint-1-gifs/Shields-Sprint-1.gif" width="800">
 
 ---
 
 #### Kyle Deveaux
 * 
 
-<img src="sprint-1-gifs/Deveaux-Sprint-1.gif" width="500">
+<img src="sprint-1-gifs/Deveaux-Sprint-1.gif" width="800">
