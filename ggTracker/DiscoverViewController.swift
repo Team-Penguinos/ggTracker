@@ -12,6 +12,10 @@ class DiscoverViewController: UIViewController {
     //global variable
     var apiCaller = IGDB_APICaller()
     
+    //instance variables
+    private var curGame : Game? = nil
+    var blOnWishlist : Bool = false
+    var blOnHomeScreen : Bool = false
     
     //outlets
     @IBOutlet weak var gameTitle: UILabel!
@@ -20,12 +24,7 @@ class DiscoverViewController: UIViewController {
     @IBOutlet weak var wishlistButton: UIButton!
     @IBOutlet weak var addHomeButton: UIButton!
     
-    //actions
-    @IBAction func favoriteGame(_ sender: Any) {
-    }
-    
-    @IBAction func addToHome(_ sender: Any) {
-    }
+ 
     
     @IBAction func testGame(_ sender: Any) {
         Task {
@@ -54,9 +53,68 @@ class DiscoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Task.init {
+            //do {
+               //self.curGame = try await apiCaller.GetGame(GameID: 1936)
+            //} catch {
+                
+            //}
+        //}
+                
         // Do any additional setup after loading the view.
     }
+    
+    //Button Functions
+    
+    //Change the colors on the WishList button
+    func setWishList(_ isWishlist:Bool) {
+        blOnWishlist = isWishlist
+        if (blOnWishlist) {
+            print("in the setWishList function True")
+            wishlistButton.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
+        }
+        else {
+            print("in the setWishList function False")
+            wishlistButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
+        }
+    }
+    
+    //Change the color on the AddGameToHome button
+    func setAddHomeButton(_ isOnHome:Bool) {
+        blOnHomeScreen = isOnHome
+        if (blOnHomeScreen) {
+            addHomeButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControl.State.normal)
+        }
+        else {
+            addHomeButton.setImage(UIImage(named: "retweet-icon"), for: UIControl.State.normal)
+        }
+    }
+    
+    
+    
+    //actions
+    @IBAction func favoriteGame(_ sender: Any) {
+        let toBeWishlist = !blOnWishlist
+        if (toBeWishlist) {
+            print("in the function favoriteGame true")
+            self.setWishList(true)
+        }
+        else {
+            print("in the function favoriteGame false")
+            self.setWishList(false)
+        }
+    }
+    
+    @IBAction func addToHome(_ sender: Any) {
+        let toBeOnHome = !blOnHomeScreen
+        if (toBeOnHome) {
+            self.setAddHomeButton(true)
+        }
+        else {
+            self.setAddHomeButton(false)
+        }
+    }
+    
     
     /*
     // MARK: - Navigation

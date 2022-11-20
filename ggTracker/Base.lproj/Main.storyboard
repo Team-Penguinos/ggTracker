@@ -67,16 +67,16 @@
                                 <rect key="frame" x="198" y="333" width="62" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="favor-icon"/>
                                 <connections>
-                                    <action selector="favoriteGame:" destination="xz5-xR-3OX" eventType="touchUpInside" id="DQv-MX-yGI"/>
+                                    <action selector="favoriteGame:" destination="xz5-xR-3OX" eventType="touchUpInside" id="Px2-Ev-Dli"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egr-me-al6">
                                 <rect key="frame" x="198" y="398" width="62" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="plus.app" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="retweet-icon"/>
                                 <connections>
                                     <action selector="addToHome:" destination="xz5-xR-3OX" eventType="touchUpInside" id="mfT-fP-1aO"/>
                                 </connections>
@@ -139,9 +139,9 @@
     </scenes>
     <resources>
         <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
+        <image name="favor-icon" width="30" height="30"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="plus.app" catalog="system" width="128" height="114"/>
+        <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
