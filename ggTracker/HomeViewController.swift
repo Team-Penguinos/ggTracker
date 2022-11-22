@@ -13,7 +13,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     //MARK: - Outlets
     @IBOutlet weak var homeTableView: UITableView!
-  
     
     
     
@@ -77,6 +76,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    //MARK: - Logout Button Action
+    
+    
+    
+    
+    
+    
+    //MARK: - Settings Button Action
+    @IBAction func onSettingsButton(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
+    
+    
 
     /*
     // MARK: - Navigation
@@ -87,5 +103,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //TODO: Get the new view controller using segue.destination.
+        //TODO: Pass the selected object to the new view controller.
+        
+        print("Loading up the details screen.")
+        
+        //Find the selected movie.
+        let cell = sender as! UITableViewCell //the sender is the cell we clicked
+        let indexPath = homeTableView.indexPath(for: cell)!
+        let userGame = movies[indexPath.row] //FIXME: Make this work
+        //^now we have found the selected cell
+        
+        //Pass the selected movie to the details view controller.
+        let editViewController = segue.destination as! EditViewController
+        EditViewController.movie = movie //FIXME: Make this work
+        
+        //This unhighlights the cell after you viewed its details and return to the main movies view controller.
+        homeTableView.deselectRow(at: indexPath, animated: true)
+
+    }
 
 }
