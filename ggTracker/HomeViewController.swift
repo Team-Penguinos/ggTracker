@@ -7,6 +7,7 @@
 
 import UIKit
 import IGDB_SWIFT_API
+import Parse
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
   
@@ -76,8 +77,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
-    //MARK: - Logout Button Action
     
+    //MARK: - Logout Button Action
+    @IBAction func onLogout(_ sender: Any) {
+        
+        PFUser.logOut() //clears the Parse cache
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
+        
+        delegate.window?.rootViewController = loginViewController
+    }
     
     
     
@@ -85,6 +96,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: - Settings Button Action
     @IBAction func onSettingsButton(_ sender: Any) {
+        
+        
     }
     
     
