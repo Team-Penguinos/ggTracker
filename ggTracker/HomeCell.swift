@@ -7,8 +7,21 @@
 
 import UIKit
 
+
+
+
 class HomeCell: UITableViewCell {
 
+    //MARK: - Outlets
+    @IBOutlet weak var favoriteGameImage: UIImageView!
+    @IBOutlet weak var favoriteGameStatus: UILabel!
+    @IBOutlet weak var favoriteGameHours: UILabel!
+    @IBOutlet weak var favoriteGameRating: UILabel!
+    
+    
+    
+    
+    //MARK: - Default Cell Funcs
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

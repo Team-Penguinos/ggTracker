@@ -6,8 +6,17 @@
 //
 
 import UIKit
+import IGDB_SWIFT_API
+import Parse 
+import AlamofireImage
+
+
+
 
 class EditViewController: UIViewController {
+    
+    //MARK: - Global Variables
+    var favoriteGame: [String:Any]! //FIXME: Not sure if this is right.
 
     override func viewDidLoad() {
         super.viewDidLoad()

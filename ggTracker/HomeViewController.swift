@@ -8,6 +8,10 @@
 import UIKit
 import IGDB_SWIFT_API
 import Parse
+import AlamofireImage
+
+
+
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
   
@@ -17,8 +21,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
+    
     //MARK: - Global Variables
     let APICaller = IGDB_APICaller()
+    var favoriteGames = [PFObject]()
+    
     
     
     
@@ -27,20 +34,27 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
         homeTableView.dataSource = self
         homeTableView.delegate = self
-        
-        
-        
-        //self.tableView.reloadData()
     }
+    
     
     
     
     //MARK: - View Did Appear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let query = PFQuery(className:"FavoriteGames")
+        query.includeKeys(["UserID"]) //we want to fetch the object, not the pointer
+        query.limit = 50
+        
+        query.findObjectsInBackground { (favoriteGames, error) in
+            if favoriteGames != nil {
+                self.favoriteGames = favoriteGames!
+                self.tableView.reloadData()
+            }
+        }
     }
     
     
@@ -49,17 +63,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //These stubs came with the UITableViewDataSource and UITableViewDelegate that were manually added in the "class" line at the start of the file.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 20
-        //FIXME: Change this according to the # of cameras we are pulling from Firebase.
+        return favoriteGames.count()
     }
 
     
     
+    
     //MARK: - TableView Stub (Each Row)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //let cell = UITableViewCell()
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
         
@@ -68,13 +79,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layer.cornerRadius = 16
         cell.layer.borderColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.65).cgColor
         
-    
+
+        let favoriteGames = favoriteGames[indexPath.row]
         
-        //cell.textLabel!.text = "row: \(indexPath.row)"
-    
+        if indexPath.row == 0 {
+            
+            //FIXME: Make a condition to check whether
+            cell.favoriteGameStatus.text = favoriteGames["Status"] as! String
+            cell.favoriteGameHours.text = favoriteGames["Hours"] as! Int
+            cell.favoriteGameRating.text = favoriteGames["Rating"] as! Int
+            cell.captionLabel.text = post["caption"] as! String
+            
+            let favoriteGameID = favoriteGames["GameID"] as! Int
+            //let imageFile = post["image"] as! PFFileObject
+            let urlString = imageFile.url! //we have to change this to grab the poster image from the API
+            let url = URL(string: urlString)!
+            
+            cell.photoView.af.setImage(withURL: url)
+            
+            return cell
+        }
         
         return cell
     }
+    
     
     
     
@@ -93,54 +121,40 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
-    
     //MARK: - Settings Button Action
     @IBAction func onSettingsButton(_ sender: Any) {
         
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let settingsViewController = main.instantiateViewController(withIdentifier: "SettingsViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
         
+        delegate.window?.rootViewController = settingsViewController
     }
     
-    
-    
-    
-    
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
-    // MARK: - Navigation
+    //MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //TODO: Get the new view controller using segue.destination.
-        //TODO: Pass the selected object to the new view controller.
+        //Get the new view controller using segue.destination.
+        //Pass the selected object to the new view controller.
         
         print("Loading up the details screen.")
         
-        //Find the selected movie.
+        //Find the selected game.
         let cell = sender as! UITableViewCell //the sender is the cell we clicked
         let indexPath = homeTableView.indexPath(for: cell)!
-        let userGame = movies[indexPath.row] //FIXME: Make this work
-        //^now we have found the selected cell
+        let favoriteGame = favoriteGames[indexPath.row] //now we have found the selected cell
         
-        //Pass the selected movie to the details view controller.
+        //Pass the selected game to the details view controller.
         let editViewController = segue.destination as! EditViewController
-        EditViewController.movie = movie //FIXME: Make this work
+        EditViewController.favoriteGame = favoriteGame //FIXME: Ensure that this works and debug where necessary.
         
         //This unhighlights the cell after you viewed its details and return to the main movies view controller.
         homeTableView.deselectRow(at: indexPath, animated: true)
-
     }
 
 }
