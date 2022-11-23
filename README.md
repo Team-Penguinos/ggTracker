@@ -39,9 +39,9 @@ Our application, GGTracker, allows users to track their video game catalog as we
     * [ ] User can see the ggTracker app icon.
     * [ ] User can see the ggTracker launch screen.
 * **User can login.**
-    * [ ] User can access the login screen. 
-    * [ ] User can see a sign in button. 
-    * [ ] User can see a sign up botton. 
+    * [x] User can access the login screen. 
+    * [x] User can see a sign in button. 
+    * [x] User can see a sign up botton. 
 * **User can logout.**
     * [ ] User will be logged out when they click the logout button.
 * **User stays logged in across restarts.**
@@ -90,6 +90,7 @@ Our application, GGTracker, allows users to track their video game catalog as we
     * [x] Secret key must be generated. 
     * [x] Get the game details for a list of top games. 
     * [x] Get the game names for a list of top games.
+    * [ ] Get the game poster for the list of top games.
 * **Parse**
     * [x] Parse must be set up.
 
@@ -302,5 +303,57 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
             * Set up the view controller for the discover screen in the main storyboard
             * Coded view controller
             * Waiting on API to start the implementation into current code
-
 <img src="sprint-1-gifs/Deveaux-Sprint-1.gif" width="800">
+
+
+
+## Sprint 2
+### Progress Descriptions & GIFs
+*For this sprint, the team extended their progress from Sprint 1 and coded more. However, the team ran into some errors, mostly with the API. The group has decided that they will be holding extra meetings for Sprint 3 to get everything they couldn't solve this week solved. In these additional meetings, the group plans to combine all of the work we have been doing on our individual GitHub branches, solve the API problem we are having (getting the game poster URL, specifically), testing Paulina's code from this week by adding data to Parse, and debugging any issues. The group aims to get all of the required functionality completed by next week, as intended.*
+
+---
+
+#### Paulina DeVito
+* I worked on creating the UI for the edit screen, where users be able to edit the status, hours, and rating for their personal list of games. I also wrote the code that accesses data from Parse for the home screen. I will have to test this code next sprint (Sprint 3) because I am waiting on my other teammates to get their screens completed so that test data can be pushed to Parse. Lastly, I helped compile everyone's submissions for this sprint as well as managed the Project Board. 
+    * List of things I accomplished: 
+        * Made the edit screen appear when the row is clicked versus making it appear when you click on an icon--the group agreed that this was a better, cleaner design choice
+        * Added a logout button to the home screen and coded the logic for it (testing the logic will be during Sprint 3)
+        * Coded the logic for the settings button (testing the logic will be during Sprint 3)
+        * Created the text fields to input data to update the existing data in Parse for a particular game
+        * Created the image view for the game's cover art on the edit screen
+        * Coded logic for the homescreen (testing the logic will be during Sprint 3)
+<img src="sprint-2-gifs/DeVito-Sprint-2.gif">
+
+
+---
+
+#### Siobahn Devlin
+* I worked on creating the login screen where users can create an account and log in with their account. 
+    * List of things I accomplished:
+        * Added Parse and AlamoFireImage as dependencies to the project
+        * Added the initial login view in the storyboard
+        * Hooked up logic for creating and logging in with account
+    * Things that did not get done:
+        * Was unable to implement login persistance at this point
+        * Generating the URL links for the cover art for the games is still proving to be a challenge
+            * Will be focusing on this issue in Sprint 3 and might be contacting our professor if necessary for help with this so that I can figure out a working solution in Sprint 3
+<img src="sprint-2-gifs/Devlin-Sprint-2.gif">
+
+
+---
+
+#### Kirk Shields 
+* I worked on getting the game title and the game description to load from the API to the requried fields on the view controller.
+    * List of things I accomplished:
+        * Got the game title to load from the API
+        * Got the game description to load from the API
+        * Implemented the function for the favorite game button to work and change the icon to red
+        * Implemented the function for the add game to home button to work and change the icon to green
+<img src="sprint-2-gifs/Shields-Sprint-2.gif">
+
+
+---
+
+#### Kyle Deveaux
+* I continued to work on the collection view code. However, I am waiting on and communicating with Siobahn to get the API issue resolved because I cannot fetch the game poster URLs and display them using AlamoFireImage at the current moment. 
+* In the upcoming sprint, I will make the CollectionView work as intended.
