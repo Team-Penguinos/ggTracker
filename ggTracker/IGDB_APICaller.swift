@@ -61,6 +61,67 @@ class IGDB_APICaller {
         return gamesList
     }
     
+    private func convertJsonDataToCoverObject(_ data: String) -> [Cover] {
+        let decoder = JSONDecoder()
+        var coverList: [Cover] = []
+        
+        let jsonData = Data(data.utf8)
+        do {
+            coverList = try decoder.decode([Cover].self, from: jsonData)
+        }
+        catch {
+            print(error)
+        }
+        return coverList
+    }
+    
+    func GetCovers(_ limit: Int) async throws -> [Cover] {
+            return await withCheckedContinuation { continuation in
+                Task.init {
+                    do {
+                        let accessToken = try await self.requestAccessToken()
+                        let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                        var coversList: [Cover] = []
+                        let apicalypse = APICalypse()
+                            .fields(fields: "game, height, image_id, url, width" )
+                            .limit(value: Int32(limit))
+                        wrapper.jsonCovers(apiCalypse: apicalypse) { covers in
+                            coversList = self.convertJsonDataToCoverObject(covers)
+                            continuation.resume(returning: coversList)
+                        } errorResponse: { error in
+                            print("\(error)")
+                        }
+                    } catch {
+                        print("\(error)")
+                    }
+                }
+            }
+        }
+    
+    func GetCover(_ GameID: Int) async throws -> Cover {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var coversList: [Cover] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "game, height, image_id, url, width" )
+                        .limit(value: Int32(1))
+                        .where(query: "game = \(GameID)")
+                    wrapper.jsonCovers(apiCalypse: apicalypse) { covers in
+                        coversList = self.convertJsonDataToCoverObject(covers)
+                        continuation.resume(returning: coversList[0])
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("\(error)")
+                }
+            }
+        }
+    }
+    
     func getTopGames(numOfGames: Int) async throws -> [Game] {
         return await withCheckedContinuation { continuation in
             Task.init {

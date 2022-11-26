@@ -15,3 +15,11 @@ struct Game: Codable {
     var release_date: Int?
     var cover: Int
 }
+
+struct Cover: Codable {
+    var game: Int
+    var image_id: String
+    var url: String
+    var width: Int
+    var height: Int
+}
