@@ -87,8 +87,9 @@ class DiscoverViewController: UIViewController {
                 coverView.af.setImage(withURL: comUrl!)
                 
                 
-            } catch {
-
+            }
+            catch {
+                print("\(error)")
             }
         }
         
