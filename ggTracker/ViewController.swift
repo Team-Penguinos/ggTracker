@@ -9,9 +9,11 @@ import UIKit
 import IGDB_SWIFT_API
 
 class ViewController: UIViewController {
+    /*
     let apiCaller = IGDB_APICaller()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+     */
 }
 

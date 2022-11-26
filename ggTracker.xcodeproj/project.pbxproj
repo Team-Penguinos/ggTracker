@@ -17,6 +17,9 @@
 		A0581D3328FB963B00B7A066 /* IGDB-SWIFT-API in Frameworks */ = {isa = PBXBuildFile; productRef = A0581D3228FB963B00B7A066 /* IGDB-SWIFT-API */; };
 		A06894BA2919EC02006606F2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06894B92919EC02006606F2 /* GameModel.swift */; };
 		A06DFF3E29076781005F435B /* IGDB_APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DFF3D29076781005F435B /* IGDB_APICaller.swift */; };
+		B72AE74F2910AD0300470345 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AE74E2910AD0300470345 /* HomeCell.swift */; };
+		B72AE7512910AD4900470345 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AE7502910AD4900470345 /* HomeViewController.swift */; };
+		B72BF6192919FA7700426AEB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BF6182919FA7700426AEB /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +35,12 @@
 		A0581D2B28FB93D900B7A066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A06894B92919EC02006606F2 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		A06DFF3D29076781005F435B /* IGDB_APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDB_APICaller.swift; sourceTree = "<group>"; };
+
+		B72AE74E2910AD0300470345 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		B72AE7502910AD4900470345 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B72BF6182919FA7700426AEB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		AA77C2078BE9E202929229A9 /* Pods_ggTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ggTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +95,15 @@
 		A0581D1C28FB93D900B7A066 /* ggTracker */ = {
 			isa = PBXGroup;
 			children = (
-				A06DFF3D29076781005F435B /* IGDB_APICaller.swift */,
 				A0581D1D28FB93D900B7A066 /* AppDelegate.swift */,
 				A0581D1F28FB93D900B7A066 /* SceneDelegate.swift */,
-				A0581D2128FB93D900B7A066 /* ViewController.swift */,
+				A06DFF3D29076781005F435B /* IGDB_APICaller.swift */,
 				A06894B92919EC02006606F2 /* GameModel.swift */,
 				A0581D2328FB93D900B7A066 /* Main.storyboard */,
+				A0581D2128FB93D900B7A066 /* ViewController.swift */,
+				B72AE74E2910AD0300470345 /* HomeCell.swift */,
+				B72AE7502910AD4900470345 /* HomeViewController.swift */,
+				B72BF6182919FA7700426AEB /* EditViewController.swift */,
 				A0581D2628FB93D900B7A066 /* Assets.xcassets */,
 				A0581D2828FB93D900B7A066 /* LaunchScreen.storyboard */,
 				A0581D2B28FB93D900B7A066 /* Info.plist */,
@@ -221,9 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72BF6192919FA7700426AEB /* EditViewController.swift in Sources */,
 				A0581D2228FB93D900B7A066 /* ViewController.swift in Sources */,
 				A0581D1E28FB93D900B7A066 /* AppDelegate.swift in Sources */,
 				A06DFF3E29076781005F435B /* IGDB_APICaller.swift in Sources */,
+				B72AE74F2910AD0300470345 /* HomeCell.swift in Sources */,
+				B72AE7512910AD4900470345 /* HomeViewController.swift in Sources */,
 				A0581D2028FB93D900B7A066 /* SceneDelegate.swift in Sources */,
 				A06894BA2919EC02006606F2 /* GameModel.swift in Sources */,
 			);
@@ -373,7 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EU8CB76HT6;
+				DEVELOPMENT_TEAM = 9QJHV93DMC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ggTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -386,7 +400,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SiobahnDevlin.ggTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PaulinaDeVito.ggTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -402,7 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EU8CB76HT6;
+				DEVELOPMENT_TEAM = 9QJHV93DMC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ggTracker/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -415,7 +429,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SiobahnDevlin.ggTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PaulinaDeVito.ggTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
