@@ -10,9 +10,6 @@ import IGDB_SWIFT_API
 import Parse
 import AlamofireImage
 
-
-
-
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     //MARK: - Outlets
     @IBOutlet weak var homeTableView: UITableView!
@@ -35,35 +32,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidAppear(animated)
         
         let query = PFQuery(className:"FavoriteGames")
-        query.includeKeys(["UserID"])
-        query.whereKey("UserID", equalTo:"FmlgFtBQk4")
+        query.includeKeys(["objectId, GameID"])
+        query.whereKey("objectId", equalTo:"4VmpJS3pZr")
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
-                // Log details of the failure
                 print(error.localizedDescription)
             } else if let objects = objects {
-                // The find succeeded.
-                print("Successfully retrieved (objects.count) scores.")
-                // Do something with the found objects
+                self.favoriteGames = objects
+                print("TEST: favoriteGames: \(self.favoriteGames)")
+                self.homeTableView.reloadData()
                 for object in objects {
-                    print(object.objectId as Any)
+                    print(object.object(forKey: "GameID") as Any)
                 }
             }
         }
-        
-//        let query = PFQuery(className:"FavoriteGames")
-////        query.includeKeys(["objectId, UserID"]) //we want to fetch the object, not the pointer
-//        query.whereKey("UserID", equalTo: "FmlgFtBQk4")
-//        query.limit = 50
-//
-//        query.findObjectsInBackground { (favoriteGames, error) in
-//            if favoriteGames != nil {
-//                self.favoriteGames = favoriteGames!
-//                self.homeTableView.reloadData()
-//            } else {
-//                print("Error from ViewDidAppear: \(error)")
-//            }
-//        }
     }
 
     //MARK: - TableView Stub (Row Number)
@@ -74,7 +56,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: - TableView Stub (Each Row)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
         
         //UI design for cells
@@ -82,26 +63,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layer.cornerRadius = 16
         cell.layer.borderColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.65).cgColor
         
-
         let favoriteGames = favoriteGames[indexPath.row]
+        let status = favoriteGames["Status"] as? String
+        let hours: Int = favoriteGames["Hours"] as? Int ?? -1
+        let rating: Int = favoriteGames["Rating"] as? Int ?? -1
         
-        if indexPath.row == 0 {
-            
-            //FIXME: Make a condition to check whether...
-            cell.favoriteGameStatus.text = favoriteGames["Status"] as? String
-            cell.favoriteGameHours.text = favoriteGames["Hours"] as? String
-            cell.favoriteGameRating.text = favoriteGames["Rating"] as? String
-            
-            let favoriteGameID = favoriteGames["GameID"] as! Int
-            //let imageFile = post["image"] as! PFFileObject
-//            let urlString = imageFile.url!
-//            let url = URL(string: urlString)!
-//
-//            cell.photoView.af.setImage(withURL: url)
-            
-            return cell
-        }
+        cell.favoriteGameStatus.text = favoriteGames["Status"] as? String
+        cell.favoriteGameHours.text = String(describing: hours)
+        cell.favoriteGameRating.text = String(describing: rating)
         
+        // let favoriteGameID = favoriteGames["GameID"] as! Int
+        // let imageFile = post["image"] as! PFFileObject
+        // let urlString = imageFile.url!
+        // let url = URL(string: urlString)!
+        //
+        // cell.photoView.af.setImage(withURL: url)
         return cell
     }
     
