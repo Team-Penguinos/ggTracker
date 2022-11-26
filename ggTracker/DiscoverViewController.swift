@@ -7,6 +7,7 @@
 
 import UIKit
 import IGDB_SWIFT_API
+import AlamofireImage
 
 class DiscoverViewController: UIViewController {
     //global variable
@@ -14,34 +15,51 @@ class DiscoverViewController: UIViewController {
     
     //instance variables
     private var curGame : Game? = nil
-    var blOnWishlist : Bool = false
-    var blOnHomeScreen : Bool = false
+    private var curCover : Cover? = nil
+    
+    
+    //button function vairables
+    private var blOnWishlist : Bool = false
+    private var blOnHomeScreen : Bool = false
     
     //outlets
     @IBOutlet weak var gameTitle: UILabel!
     @IBOutlet weak var gameDescription: UILabel!
     
+    @IBOutlet weak var coverView: UIImageView!
     @IBOutlet weak var wishlistButton: UIButton!
     @IBOutlet weak var addHomeButton: UIButton!
     
  
     
     @IBAction func testGame(_ sender: Any) {
-        Task {
-            do {
-                let game = try await apiCaller.GetGame(GameID: 1942)
-                print("\(game)")
-            }
-            catch {
-                print("\(error)")
-            }
-        }
+//        Task {
+//            do {
+//                let game = try await apiCaller.GetGame(GameID: 1942)
+//                print("\(game)")
+//            }
+//            catch {
+//                print("\(error)")
+//            }
+//        }
+        
+//        Task {
+//            do {
+//                let covers = try await apiCaller.GetCover(1942)
+//                print("\(covers)")
+//            }
+//            catch {
+//                print("\(error)")
+//            }
+//        }
+                
+//        print("\(curGame)")
     }
     
     func setGame(GameID: Int) async -> Game? {
         var game: Game? = nil
         do {
-                game = try await apiCaller.GetGame(GameID: 1942)
+                game = try await apiCaller.GetGame(1942)
                 return game
             }
             catch {
@@ -53,13 +71,27 @@ class DiscoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Task.init {
-            //do {
-               //self.curGame = try await apiCaller.GetGame(GameID: 1936)
-            //} catch {
+        Task.init {
+            do {
+                self.curGame = try await apiCaller.GetGame(1942)
+                self.curCover = try await apiCaller.GetCover(1942)
                 
-            //}
-        //}
+                //set the title and the description of the box
+                gameTitle.text = curGame?.name
+                gameDescription.text = curGame?.summary
+                
+                //set the image view using alamo fire image
+                let protoUrl = "https:"
+                let coverPath = self.curCover?.url
+                let comUrl = URL(string: protoUrl + (coverPath ?? "error"))
+                coverView.af.setImage(withURL: comUrl!)
+                
+                
+            } catch {
+
+            }
+        }
+        
                 
         // Do any additional setup after loading the view.
     }
