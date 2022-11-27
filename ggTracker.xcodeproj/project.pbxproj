@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1936629A2932FCD0008F2D48 /* DiscoverScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193662992932FCD0008F2D48 /* DiscoverScreen.storyboard */; };
 		194DEBD3292090AE0060B02F /* gameGollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194DEBD2292090AE0060B02F /* gameGollectionViewCell.swift */; };
 		A0581D1E28FB93D900B7A066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0581D1D28FB93D900B7A066 /* AppDelegate.swift */; };
 		A0581D2028FB93D900B7A066 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0581D1F28FB93D900B7A066 /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		193662992932FCD0008F2D48 /* DiscoverScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DiscoverScreen.storyboard; sourceTree = "<group>"; };
 		194DEBD2292090AE0060B02F /* gameGollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameGollectionViewCell.swift; sourceTree = "<group>"; };
 		A0581D1A28FB93D900B7A066 /* ggTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0581D1D28FB93D900B7A066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				A0581D2628FB93D900B7A066 /* Assets.xcassets */,
 				A0581D2828FB93D900B7A066 /* LaunchScreen.storyboard */,
 				A0581D2B28FB93D900B7A066 /* Info.plist */,
+				193662992932FCD0008F2D48 /* DiscoverScreen.storyboard */,
 			);
 			path = ggTracker;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				A0581D2A28FB93D900B7A066 /* LaunchScreen.storyboard in Resources */,
 				A0581D2728FB93D900B7A066 /* Assets.xcassets in Resources */,
 				A0581D2528FB93D900B7A066 /* Main.storyboard in Resources */,
+				1936629A2932FCD0008F2D48 /* DiscoverScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
