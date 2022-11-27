@@ -21,12 +21,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="83" y="-28"/>
+            <point key="canvasLocation" x="-614" y="-674"/>
         </scene>
-        <!--Discover View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="dbb-bQ-azI">
             <objects>
-                <viewController id="xz5-xR-3OX" customClass="DiscoverViewController" customModule="ggTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xz5-xR-3OX" customClass="DetailsViewController" customModule="ggTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dhl-5Q-FY8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36C-Vf-Cn8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196.9230769230767" y="-28.436018957345969"/>
+            <point key="canvasLocation" x="-188" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yDL-ce-Fy4">
@@ -135,7 +135,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ll3-I5-2c0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231" y="-28"/>
+            <point key="canvasLocation" x="-1023" y="79"/>
         </scene>
     </scenes>
     <resources>

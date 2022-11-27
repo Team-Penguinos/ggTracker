@@ -24,3 +24,10 @@ struct Cover: Codable {
     var height: Int
 }
 
+struct Artwork: Codable {
+    var game: Int
+    var image_id: String
+    var url: String
+    var width: Int
+    var height: Int
+}

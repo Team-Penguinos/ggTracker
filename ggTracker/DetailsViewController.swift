@@ -8,8 +8,9 @@
 import UIKit
 import IGDB_SWIFT_API
 import AlamofireImage
+import Parse
 
-class DiscoverViewController: UIViewController {
+class DetailsViewController: UIViewController {
     //global variable
     var apiCaller = IGDB_APICaller()
     
@@ -52,6 +53,16 @@ class DiscoverViewController: UIViewController {
 //                print("\(error)")
 //            }
 //        }
+        
+        Task {
+            do {
+                let artwork = try await apiCaller.GetArtwork(1942)
+                print("\(artwork)")
+            }
+            catch {
+                print("\(error)")
+            }
+        }
                 
 //        print("\(curGame)")
     }
