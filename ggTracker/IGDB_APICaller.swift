@@ -61,6 +61,34 @@ class IGDB_APICaller {
         return gamesList
     }
     
+    private func convertJsonDataToCoverObject(_ data: String) -> [Cover] {
+        let decoder = JSONDecoder()
+        var coverList: [Cover] = []
+        
+        let jsonData = Data(data.utf8)
+        do {
+            coverList = try decoder.decode([Cover].self, from: jsonData)
+        }
+        catch {
+            print(error)
+        }
+        return coverList
+    }
+    
+    private func convertJsonDataToArtworkObject(_ data: String) -> [Artwork] {
+        let decoder = JSONDecoder()
+        var artworkList: [Artwork] = []
+        
+        let jsonData = Data(data.utf8)
+        do {
+            artworkList = try decoder.decode([Artwork].self, from: jsonData)
+        }
+        catch {
+            print(error)
+        }
+        return artworkList
+    }
+        
     func getTopGames(numOfGames: Int) async throws -> [Game] {
         return await withCheckedContinuation { continuation in
             Task.init {
@@ -82,6 +110,100 @@ class IGDB_APICaller {
                     }
                 } catch {
                     print("Error fetching access token: \(error)")
+                }
+            }
+        }
+    }
+    
+    func GetGame(_ GameID: Int) async throws -> Game {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var gamesList: [Game] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "name, rating, summary, release_dates, cover")
+                        .where(query: "id = \(GameID)")
+                    wrapper.jsonGames(apiCalypse: apicalypse) { games in
+                        gamesList = self.convertJsonDataToGameObject(games)
+                        continuation.resume(returning: gamesList[0])
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("Error fetching access token: \(error)")
+                }
+            }
+        }
+    }
+    
+    func GetCovers(_ limit: Int) async throws -> [Cover] {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var coversList: [Cover] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "game, height, image_id, url, width" )
+                        .limit(value: Int32(limit))
+                    wrapper.jsonCovers(apiCalypse: apicalypse) { covers in
+                        coversList = self.convertJsonDataToCoverObject(covers)
+                        continuation.resume(returning: coversList)
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("\(error)")
+                }
+            }
+        }
+    }
+    
+    func GetCover(_ GameID: Int) async throws -> Cover {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var coversList: [Cover] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "game, height, image_id, url, width" )
+                        .limit(value: Int32(1))
+                        .where(query: "game = \(GameID)")
+                    wrapper.jsonCovers(apiCalypse: apicalypse) { covers in
+                        coversList = self.convertJsonDataToCoverObject(covers)
+                        continuation.resume(returning: coversList[0])
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("\(error)")
+                }
+            }
+        }
+    }
+    
+    func GetArtwork(_ GameID: Int) async throws -> Artwork {
+        return await withCheckedContinuation { continuation in
+            Task.init {
+                do {
+                    let accessToken = try await self.requestAccessToken()
+                    let wrapper: IGDBWrapper = IGDBWrapper(clientID: self.clientID, accessToken: accessToken)
+                    var artworkList: [Artwork] = []
+                    let apicalypse = APICalypse()
+                        .fields(fields: "game, height, image_id, url, width" )
+                        .limit(value: Int32(1))
+                        .where(query: "game = \(GameID)")
+                    wrapper.jsonCovers(apiCalypse: apicalypse) { artwork in
+                        artworkList = self.convertJsonDataToArtworkObject(artwork)
+                        continuation.resume(returning: artworkList[0])
+                    } errorResponse: { error in
+                        print("\(error)")
+                    }
+                } catch {
+                    print("\(error)")
                 }
             }
         }
