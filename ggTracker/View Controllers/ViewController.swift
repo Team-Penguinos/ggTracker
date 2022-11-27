@@ -73,17 +73,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         print("Loading up the Discover Details Screen.")
-        
-        //Find the selected game.
-        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked
-        let indexPath = collectionView.indexPath(for: cell)!
-        let game = games[indexPath.row] //now we have found the selected cell //FIXME: games might not be an array. Fix this accordingly.
-        
-        //Pass the selected game to the Game Details View Controller.
-        let gameDetailsViewController = segue.destination as! GameDetailsViewController //FIXME: Change this to the name of Kirk's file.
-        
-        //This unhighlights the cell after you view its details and return to this view.
-        collectionView.deselectRow(at: indexPath, animated: true)
+//        
+//        //Find the selected game.
+//        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked
+//        let indexPath = collectionView.indexPath(for: cell)!
+//        let game = games[indexPath.row] //now we have found the selected cell //FIXME: games might not be an array. Fix this accordingly.
+//        
+//        //Pass the selected game to the Game Details View Controller.
+//        let gameDetailsViewController = segue.destination as! GameDetailsViewController //FIXME: Change this to the name of Kirk's file.
+//        
+//        //This unhighlights the cell after you view its details and return to this view.
+//        collectionView.deselectRow(at: indexPath, animated: true)
         
     }
     
