@@ -39,11 +39,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print(error.localizedDescription)
             } else if let objects = objects {
                 self.favoriteGames = objects
-                print("TEST: favoriteGames: \(self.favoriteGames)")
                 self.homeTableView.reloadData()
-                for object in objects {
-                    print(object.object(forKey: "GameID") as Any)
-                }
             }
         }
     }
@@ -125,5 +121,4 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //This unhighlights the cell after you viewed its details and return to the main movies view controller.
         homeTableView.deselectRow(at: indexPath, animated: true)
     }
-
 }

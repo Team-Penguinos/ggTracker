@@ -28,32 +28,38 @@
 		<key>QuickStart (Playground) 12.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>19</integer>
 		</dict>
 		<key>QuickStart (Playground) 13.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>20</integer>
 		</dict>
 		<key>QuickStart (Playground) 14.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>21</integer>
 		</dict>
 		<key>QuickStart (Playground) 15.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>21</integer>
-		</dict>
-		<key>QuickStart (Playground) 16.xcscheme</key>
-		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>22</integer>
 		</dict>
-		<key>QuickStart (Playground) 17.xcscheme</key>
+		<key>QuickStart (Playground) 16.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>23</integer>
+		</dict>
+		<key>QuickStart (Playground) 17.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>24</integer>
 		</dict>
 		<key>QuickStart (Playground) 18.xcscheme</key>
 		<dict>
