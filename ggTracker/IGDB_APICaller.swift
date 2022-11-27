@@ -208,6 +208,4 @@ class IGDB_APICaller {
             }
         }
     }
-    
-    
 }
