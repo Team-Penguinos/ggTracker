@@ -83,6 +83,7 @@
 			<integer>8</integer>
 		</dict>
 		<key>QuickStart (Playground) 20.xcscheme</key>
+		<key>QuickStart (Playground) 3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -96,11 +97,15 @@
 		</dict>
 		<key>QuickStart (Playground) 4.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
 		<key>QuickStart (Playground) 5.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
@@ -110,6 +115,7 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
+			<integer>13</integer>
 		</dict>
 		<key>QuickStart (Playground) 7.xcscheme</key>
 		<dict>
@@ -117,6 +123,7 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>QuickStart (Playground) 8.xcscheme</key>
 		<dict>
@@ -131,6 +138,7 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>16</integer>
+			<integer>15</integer>
 		</dict>
 		<key>QuickStart (Playground).xcscheme</key>
 		<dict>
