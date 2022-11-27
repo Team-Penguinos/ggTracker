@@ -18,6 +18,7 @@
 		A063C7C1292BFE9800693A0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A063C7C0292BFE9800693A0D /* LoginViewController.swift */; };
 		A06894BA2919EC02006606F2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06894B92919EC02006606F2 /* GameModel.swift */; };
 		A06DFF3E29076781005F435B /* IGDB_APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06DFF3D29076781005F435B /* IGDB_APICaller.swift */; };
+		A0AC02A42932F6710087EA0D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0AC02A32932F6710087EA0D /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A063C7C0292BFE9800693A0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A06894B92919EC02006606F2 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		A06DFF3D29076781005F435B /* IGDB_APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDB_APICaller.swift; sourceTree = "<group>"; };
+		A0AC02A32932F6710087EA0D /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		AA77C2078BE9E202929229A9 /* Pods_ggTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ggTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				A0581D2128FB93D900B7A066 /* ViewController.swift */,
 				A06894B92919EC02006606F2 /* GameModel.swift */,
 				A0581D2328FB93D900B7A066 /* Main.storyboard */,
+				A0AC02A32932F6710087EA0D /* Login.storyboard */,
 				A063C7C0292BFE9800693A0D /* LoginViewController.swift */,
 				A0581D2628FB93D900B7A066 /* Assets.xcassets */,
 				A0581D2828FB93D900B7A066 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0AC02A42932F6710087EA0D /* Login.storyboard in Resources */,
 				A0581D2A28FB93D900B7A066 /* LaunchScreen.storyboard in Resources */,
 				A0581D2728FB93D900B7A066 /* Assets.xcassets in Resources */,
 				A0581D2528FB93D900B7A066 /* Main.storyboard in Resources */,
