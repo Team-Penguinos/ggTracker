@@ -19,7 +19,7 @@ class gameGollectionViewCell: UICollectionViewCell {
     //The code below was not in Flix
     //Game is for the api being called 
     func setup(with game: Game){
-        gameImageView.image = game.image
+        // gameImageView.image = game.image
     }
     
     

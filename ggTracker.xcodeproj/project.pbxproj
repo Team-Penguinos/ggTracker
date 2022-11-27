@@ -105,6 +105,7 @@
 			children = (
 				A0581D2328FB93D900B7A066 /* Main.storyboard */,
 				A0AC02A32932F6710087EA0D /* Login.storyboard */,
+				193662992932FCD0008F2D48 /* DiscoverScreen.storyboard */,
 				BD02F84E2932FA1100E4F785 /* Details.storyboard */,
 				A0581D2828FB93D900B7A066 /* LaunchScreen.storyboard */,
 				A06DFF3D29076781005F435B /* IGDB_APICaller.swift */,
@@ -119,7 +120,6 @@
 				A06894B92919EC02006606F2 /* GameModel.swift */,
 				A0581D2628FB93D900B7A066 /* Assets.xcassets */,
 				A0581D2B28FB93D900B7A066 /* Info.plist */,
-				193662992932FCD0008F2D48 /* DiscoverScreen.storyboard */,
 			);
 			path = ggTracker;
 			sourceTree = "<group>";
@@ -249,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				194DEBD3292090AE0060B02F /* gameGollectionViewCell.swift in Sources */,
-				A0581D2228FB93D900B7A066 /* ViewController.swift in Sources */,
 				B72BF6192919FA7700426AEB /* EditViewController.swift in Sources */,
 				A063C7C1292BFE9800693A0D /* LoginViewController.swift in Sources */,
 				A0581D1E28FB93D900B7A066 /* AppDelegate.swift in Sources */,
