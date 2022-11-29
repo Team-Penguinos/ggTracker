@@ -11,12 +11,14 @@ import Parse
 import AlamofireImage
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
     //MARK: - Outlets
     @IBOutlet weak var homeTableView: UITableView!
 
     //MARK: - Global Variables
     let APICaller = IGDB_APICaller()
     var favoriteGames = [PFObject]()
+    var apiCaller = IGDB_APICaller()
     
     //MARK: - View Did Load
     override func viewDidLoad() {
@@ -25,6 +27,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         homeTableView.dataSource = self
         homeTableView.delegate = self
+        
+        self.homeTableView.reloadData()
     }
     
     //MARK: - View Did Appear
@@ -49,7 +53,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return favoriteGames.count
     }
     
-    
     //MARK: - TableView Stub (Each Row)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
@@ -59,21 +62,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layer.cornerRadius = 16
         cell.layer.borderColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.65).cgColor
         
-        let favoriteGames = favoriteGames[indexPath.row]
-        let status = favoriteGames["Status"] as? String
-        let hours: Int = favoriteGames["Hours"] as? Int ?? -1
-        let rating: Int = favoriteGames["Rating"] as? Int ?? -1
+        let favoriteGame = favoriteGames[indexPath.row]
+        let status = favoriteGame["Status"] as? String
+        let hours: Int = favoriteGame["Hours"] as? Int ?? -1
+        let rating: Int = favoriteGame["Rating"] as? Int ?? -1
         
-        cell.favoriteGameStatus.text = favoriteGames["Status"] as? String
+        cell.favoriteGameStatus.text = favoriteGame["Status"] as? String
         cell.favoriteGameHours.text = String(describing: hours)
         cell.favoriteGameRating.text = String(describing: rating)
         
-        // let favoriteGameID = favoriteGames["GameID"] as! Int
-        // let imageFile = post["image"] as! PFFileObject
-        // let urlString = imageFile.url!
-        // let url = URL(string: urlString)!
-        //
-        // cell.photoView.af.setImage(withURL: url)
+        Task.init {
+            do {
+                //get the cover for the individual game
+                let favoriteGameID = favoriteGame["GameID"] as? Int ?? -1
+                let cover = try await apiCaller.GetCover(favoriteGameID)
+                let protoURL = "https:"
+                let coverPath = cover.url
+                let comURL = URL(string: protoURL + (coverPath ?? "error"))
+                cell.favoriteGameImage.af.setImage(withURL: comURL!)
+            }
+            catch {
+                print("\(error)")
+            }
+        }
+        
         return cell
     }
     
@@ -89,32 +101,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         delegate.window?.rootViewController = loginViewController
     }
     
-    
-    @IBAction func onSettings(_ sender: Any) {
-        performSegue(withIdentifier: "settingSegue", sender: nil)
-    }
-    
-    
     //MARK: - Navigation
-
-    //In a storyboard-based application, you will often want to do a little preparation before navigation
+    //FIXME: This isn't working.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Loading up the edit screen.")
         
-        //Get the new view controller using segue.destination.
-        //Pass the selected object to the new view controller.
-        
-        print("Loading up the details screen.")
-        
-        //Find the selected game.
-        let cell = sender as! UITableViewCell //the sender is the cell we clicked
+        //find the selected game
+        let cell = sender as! UITableViewCell
         let indexPath = homeTableView.indexPath(for: cell)!
-        let favoriteGame = favoriteGames[indexPath.row] //now we have found the selected cell
-        
-        //Pass the selected game to the details view controller.
+        let favoriteGame = favoriteGames[indexPath.row]
+        //pass the selected game to the details view controller
         let editViewController = segue.destination as! EditViewController
-        editViewController.favoriteGame = favoriteGames[indexPath.row] //FIXME: Ensure that this works and debug where necessary.
-        
-        //This unhighlights the cell after you viewed its details and return to the main movies view controller.
+        editViewController.passedFavoriteGame = favoriteGames[indexPath.row]
+        //deselects the row
         homeTableView.deselectRow(at: indexPath, animated: true)
     }
 }

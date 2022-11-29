@@ -16,7 +16,7 @@ import AlamofireImage
 class EditViewController: UIViewController {
     
     //MARK: - Global Variables
-    var favoriteGame = PFObject()
+    var passedFavoriteGame = PFObject()
 
     override func viewDidLoad() {
         super.viewDidLoad()
