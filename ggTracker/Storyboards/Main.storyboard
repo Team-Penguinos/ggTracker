@@ -146,6 +146,7 @@
                                         <size key="customSize" width="165" height="228"/>
                                         <connections>
                                             <outlet property="gameImageView" destination="OcG-td-jxx" id="Fbp-Ke-RiV"/>
+                                            <segue destination="cZf-5E-CCm" kind="show" id="Mca-tc-2Lp"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

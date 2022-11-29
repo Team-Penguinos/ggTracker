@@ -112,6 +112,16 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         print("Loading up the Discover Details Screen.")
+        
+        //find the selected game
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let game = gameObjects[indexPath.row]
+        //Pass selected game to details screen
+        let detailsViewControl = segue.destination as! DetailsViewController
+        detailsViewControl.setGame(game)
+        //deselect the row
+        collectionView.deselectItem(at: indexPath, animated: true)
 //        
 //        //Find the selected game.
 //        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked

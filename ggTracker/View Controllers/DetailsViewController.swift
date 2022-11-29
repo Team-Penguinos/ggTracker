@@ -31,6 +31,13 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var wishlistButton: UIButton!
     @IBOutlet weak var addHomeButton: UIButton!
     
+    
+    //segue setter
+    
+    public func setGame(_ PassedGame: Game) {
+        curGame = PassedGame
+    }
+    
  
     
     @IBAction func testGame(_ sender: Any) {
@@ -67,44 +74,45 @@ class DetailsViewController: UIViewController {
 //        print("\(curGame)")
     }
     
-    func setGame(GameID: Int) async -> Game? {
-        var game: Game? = nil
-        do {
-                game = try await apiCaller.GetGame(1942)
-                return game
-            }
-            catch {
-                print("\(error)")
-            }
-        return game
-    }
+//    func setGame(GameID: Int) async -> Game? {
+//        var game: Game? = nil
+//        do {
+//                game = try await apiCaller.GetGame(1942)
+//                return game
+//            }
+//            catch {
+//                print("\(error)")
+//            }
+//        return game
+//    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Task.init {
             do {
-                self.curGame = try await apiCaller.GetGame(1942)
-                self.curCover = try await apiCaller.GetCover(1942)
-                
-                //set the title and the description of the box
-                gameTitle.text = curGame?.name
-                gameDescription.text = curGame?.summary
-                
-                //set the image view using alamo fire image
-                let protoUrl = "https:"
-                let coverPath = self.curCover?.url
-                let comUrl = URL(string: protoUrl + (coverPath ?? "error"))
-                coverView.af.setImage(withURL: comUrl!)
-                
-                
+                if let gameId = curGame?.id {
+                    self.curGame = try await apiCaller.GetGame(gameId)
+                    self.curCover = try await apiCaller.GetCover(gameId)
+                    
+                    //set the title and the description of the box
+                    gameTitle.text = curGame?.name
+                    gameDescription.text = curGame?.summary
+                    
+                    //set the image view using alamo fire image
+                    let protoUrl = "https:"
+                    let coverPath = self.curCover?.url
+                    let comUrl = URL(string: protoUrl + (coverPath ?? "error"))
+                    coverView.af.setImage(withURL: comUrl!)
+                }
+                else {
+                    print("you are a bafoon")
+                }
             }
             catch {
                 print("\(error)")
             }
         }
-        
-                
         // Do any additional setup after loading the view.
     }
     
