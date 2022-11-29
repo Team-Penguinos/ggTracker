@@ -3,4 +3,84 @@
    uuid = "937DD847-48F0-476E-A374-6D84FEC3727F"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEC80CD7-6498-4F34-9942-8934A015C94F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ggTracker/View Controllers/DiscoverViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AEC80CD7-6498-4F34-9942-8934A015C94F - adf807db00576e87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in ggTracker.DiscoverViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/DiscoverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "AEC80CD7-6498-4F34-9942-8934A015C94F - 4f8e5b790b3e2aaf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in ggTracker.DiscoverViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/DiscoverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "AEC80CD7-6498-4F34-9942-8934A015C94F - 5a6b58952cf4f291"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in ggTracker.DiscoverViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/DiscoverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "AEC80CD7-6498-4F34-9942-8934A015C94F - 8da3ca35c142049a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in ggTracker.DiscoverViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/DiscoverViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
