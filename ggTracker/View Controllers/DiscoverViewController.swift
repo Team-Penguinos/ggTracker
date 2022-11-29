@@ -9,7 +9,7 @@ import UIKit
 import IGDB_SWIFT_API
 import AlamofireImage
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     //MARK: - Global Variables
     @IBOutlet weak var collectionView: UICollectionView!
@@ -64,26 +64,27 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     //MARK: - On Setting Button
-    @IBAction func onSettingButton(_ sender: Any) {
-        //TODO: Make this send the user to the about screen.
-    }
-    
+//    @IBAction func onSettingButton(_ sender: Any) {
+//        //TODO: Make this send the user to the about screen.
+//        self.performSegue(withIdentifier: "settingsSegue", sender: nil)
+//        print("Settings button has been tapped")
+//    }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         print("Loading up the Discover Details Screen.")
-        
-        //Find the selected game.
-        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked
-        let indexPath = collectionView.indexPath(for: cell)!
-        let game = games[indexPath.row] //now we have found the selected cell //FIXME: games might not be an array. Fix this accordingly.
-        
-        //Pass the selected game to the Game Details View Controller.
-        let gameDetailsViewController = segue.destination as! GameDetailsViewController //FIXME: Change this to the name of Kirk's file.
-        
-        //This unhighlights the cell after you view its details and return to this view.
-        collectionView.deselectRow(at: indexPath, animated: true)
+//        
+//        //Find the selected game.
+//        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked
+//        let indexPath = collectionView.indexPath(for: cell)!
+//        let game = games[indexPath.row] //now we have found the selected cell //FIXME: games might not be an array. Fix this accordingly.
+//        
+//        //Pass the selected game to the Game Details View Controller.
+//        let gameDetailsViewController = segue.destination as! GameDetailsViewController //FIXME: Change this to the name of Kirk's file.
+//        
+//        //This unhighlights the cell after you view its details and return to this view.
+//        collectionView.deselectRow(at: indexPath, animated: true)
         
     }
     
