@@ -64,10 +64,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     
     //MARK: - On Setting Button
-    @IBAction func onSettingButton(_ sender: Any) {
-        //TODO: Make this send the user to the about screen.
-    }
-    
+//    @IBAction func onSettingButton(_ sender: Any) {
+//        //TODO: Make this send the user to the about screen.
+//        self.performSegue(withIdentifier: "settingsSegue", sender: nil)
+//        print("Settings button has been tapped")
+//    }
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

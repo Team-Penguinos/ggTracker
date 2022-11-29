@@ -88,17 +88,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         delegate.window?.rootViewController = loginViewController
     }
-
-    //MARK: - Settings Button Action
-    @IBAction func onSettingsButton(_ sender: Any) {
-        
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let settingsViewController = main.instantiateViewController(withIdentifier: "SettingsViewController")
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene, let delegate = windowScene.delegate as? SceneDelegate else { return }
-        
-        delegate.window?.rootViewController = settingsViewController
+    
+    
+    @IBAction func onSettings(_ sender: Any) {
+        performSegue(withIdentifier: "settingSegue", sender: nil)
     }
-
+    
+    
     //MARK: - Navigation
 
     //In a storyboard-based application, you will often want to do a little preparation before navigation
