@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let query = PFQuery(className:"FavoriteGames")
         query.includeKeys(["objectId, GameID"])
-        query.whereKey("objectId", equalTo:"4VmpJS3pZr")
+        query.whereKey("UserID", equalTo:PFUser.current())
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
@@ -63,9 +63,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layer.borderColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.65).cgColor
         
         let favoriteGame = favoriteGames[indexPath.row]
-        let status = favoriteGame["Status"] as? String
-        let hours: Int = favoriteGame["Hours"] as? Int ?? -1
-        let rating: Int = favoriteGame["Rating"] as? Int ?? -1
+        let status = favoriteGame["Status"] as? String ?? "NO STATUS"
+        let hours: Int = favoriteGame["Hours"] as? Int ?? 0
+        let rating: Int = favoriteGame["Rating"] as? Int ?? 0
         
         cell.favoriteGameStatus.text = favoriteGame["Status"] as? String
         cell.favoriteGameHours.text = String(describing: hours)
@@ -109,7 +109,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //find the selected game
         let cell = sender as! UITableViewCell
         let indexPath = homeTableView.indexPath(for: cell)!
-        let favoriteGame = favoriteGames[indexPath.row]
         //pass the selected game to the details view controller
         let editViewController = segue.destination as! EditViewController
         editViewController.passedFavoriteGame = favoriteGames[indexPath.row]
