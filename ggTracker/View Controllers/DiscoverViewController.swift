@@ -76,7 +76,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
                 //set the image view using alamo fire image
                 let protoUrl = "https:"
                 let coverPath = cover.url
-                let comUrl = URL(string: protoUrl + (coverPath ?? "error"))
+                let comUrl = URL(string: protoUrl + coverPath)
                 cell.gameImageView.af.setImage(withURL: comUrl!)
             }
             catch {
@@ -93,12 +93,6 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         //cell.gameImageView.af.setImage(withURL: posterURL)
         
         return cell
-    }
-
-
-    //MARK: - Layout Function
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 300)
     }
         
     //MARK: - On Setting Button
