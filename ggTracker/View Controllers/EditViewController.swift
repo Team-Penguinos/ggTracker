@@ -30,6 +30,7 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("\(passedFavoriteGame["objectId"])")
         //for the status pop up button
         statusButton.changesSelectionAsPrimaryAction = true
         statusButton.showsMenuAsPrimaryAction = true
@@ -57,8 +58,8 @@ class EditViewController: UIViewController {
     //Need to pass this a string for status,
     // a int for hours,
     // and a int for rating.
-    func updateGame()
-    {
+    @IBAction func onUpdateButton(_ sender: Any) {
+       
         let query = PFQuery(className:"FavoriteGames")
         let objectID = passedFavoriteGame["objectId"] as? String ?? "error"
         
@@ -67,16 +68,13 @@ class EditViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else if let tobeUpdatedFavoriteGame = toBeUpdatedFavoriteGame {
-                //toBeUpdatedFavoriteGame["Status"] =
-                //toBeUpdatedFavoriteGame["Hours"] =
-                //toBeUpdatedFavoriteGame["Rating"] =
-                //toBeUpdatedFavoriteGame.saveInBackground()
+                toBeUpdatedFavoriteGame!["Status"] = self.statusButton.titleLabel
+                toBeUpdatedFavoriteGame!["Hours"] = self.hoursField.text
+                toBeUpdatedFavoriteGame!["Rating"] = self.ratingsField.text
+                toBeUpdatedFavoriteGame!.saveInBackground()
             }
         }
     }
-    
-    
-    
     
     
 

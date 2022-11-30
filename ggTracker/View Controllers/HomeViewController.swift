@@ -36,8 +36,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidAppear(animated)
         
         let query = PFQuery(className:"FavoriteGames")
-        query.includeKeys(["objectId, GameID"])
-        query.whereKey("UserID", equalTo:PFUser.current())
+        query.includeKeys(["objectId , GameID"])
+        query.whereKey("UserID", equalTo: PFUser.current())
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
@@ -46,6 +46,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.homeTableView.reloadData()
             }
         }
+        print("\(favoriteGames)")
     }
 
     //MARK: - TableView Stub (Row Number)
@@ -63,9 +64,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.layer.borderColor = UIColor(red: 018/255, green: 018/255, blue: 018/255, alpha: 0.65).cgColor
         
         let favoriteGame = favoriteGames[indexPath.row]
-        let status = favoriteGame["Status"] as? String ?? "NO STATUS"
-        let hours: Int = favoriteGame["Hours"] as? Int ?? 0
-        let rating: Int = favoriteGame["Rating"] as? Int ?? 0
+        let status = favoriteGame["Status"] as? String ?? "n/a"
+        let hours = favoriteGame["Hours"] as? String ?? "0"
+        let rating = favoriteGame["Rating"] as? String ?? "0"
         
         cell.favoriteGameStatus.text = favoriteGame["Status"] as? String
         cell.favoriteGameHours.text = String(describing: hours)

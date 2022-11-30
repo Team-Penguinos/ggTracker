@@ -7,32 +7,32 @@
 		<key>Alamofire.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>13</integer>
 		</dict>
 		<key>AlamofireImage.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Bolts.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>16</integer>
 		</dict>
 		<key>Parse-Parse.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>17</integer>
 		</dict>
 		<key>Parse.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>15</integer>
 		</dict>
 		<key>Pods-ggTracker.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>18</integer>
 		</dict>
 	</dict>
 </dict>
