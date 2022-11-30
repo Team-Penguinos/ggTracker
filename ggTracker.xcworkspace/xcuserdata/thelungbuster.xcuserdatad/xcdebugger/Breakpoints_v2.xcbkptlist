@@ -85,17 +85,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D4CA848E-BAA7-4B6D-A681-56CB7A8FB7DF"
+            uuid = "1481CA1B-F4AD-4AF9-BF0A-63410723E27A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ggTracker/View Controllers/DetailsViewController.swift"
+            filePath = "ggTracker/View Controllers/EditViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "addToHome(_:)"
-            landmarkType = "7">
+            startingLineNumber = "64"
+            endingLineNumber = "64">
+            <Locations>
+               <Location
+                  uuid = "1481CA1B-F4AD-4AF9-BF0A-63410723E27A - 98f121b41923a805"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ggTracker.EditViewController.onUpdateButton(Any) -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "1481CA1B-F4AD-4AF9-BF0A-63410723E27A - 98f121b41923a805"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ggTracker.EditViewController.onUpdateButton(Any) -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "564">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AEAFCD51-278B-479F-9017-AD087288F38C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ggTracker/View Controllers/EditViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66">
+            <Locations>
+               <Location
+                  uuid = "AEAFCD51-278B-479F-9017-AD087288F38C - 98f121b41923a847"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ggTracker.EditViewController.onUpdateButton(Any) -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "800">
+               </Location>
+               <Location
+                  uuid = "AEAFCD51-278B-479F-9017-AD087288F38C - 1db788a71464d131"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.PFObject&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ggTracker.EditViewController.onUpdateButton(Any) -&gt; ()"
+                  moduleName = "ggTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thelungbuster/Desktop/Class%20Work/Fall%202022%20(FINAL%20SEMESTER)/Mobile%20App%20Projects/Group%20Project/ggTracker/ggTracker/View%20Controllers/EditViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

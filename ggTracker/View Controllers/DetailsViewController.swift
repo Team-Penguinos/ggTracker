@@ -112,6 +112,8 @@ class DetailsViewController: UIViewController {
                 if (game != nil) {
                     self.deleteGame = game![0]
                     self.deleteGame.deleteInBackground()
+                    //make the button grey
+                    self.setAddHomeButton(false)
                 }
             }
         }

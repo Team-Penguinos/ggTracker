@@ -170,7 +170,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system"/>
                             </button>
                             <connections>
-                                <segue destination="8Fz-HE-mVQ" kind="show" id="PSr-wo-Voj"/>
+                                <segue destination="8Fz-HE-mVQ" kind="show" id="m6n-pC-ylQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
