@@ -36,24 +36,20 @@ Our application, GGTracker, allows users to track their video game catalog as we
 
 ---
 * **User sees an app icon on the home screen and a styled launch screen.**
-    * [ ] User can see the ggTracker app icon.
-    * [ ] User can see the ggTracker launch screen.
+    * [x] User can see the ggTracker app icon.
+    * [x] User can see the ggTracker launch screen.
 * **User can login.**
     * [x] User can access the login screen. 
     * [x] User can see a sign in button. 
     * [x] User can see a sign up botton. 
-* **User can logout.**
-    * [ ] User will be logged out when they click the logout button.
-* **User stays logged in across restarts.**
-    * [ ] User has persistence between logins.
 * **User can view and scroll through a list of top games on the discover page.**
-    * [ ] User can see a CollectionView where games will be.
-    * [ ] User can tap on a game poster on the CollectionView to view the details for the game on the details screen. 
+    * [x] User can see a CollectionView where games will be.
+    * [x] User can tap on a game poster on the CollectionView to view the details for the game on the details screen. 
     * [x] On the details screen, user can see an ImageView for the game poster.
     * [x] On the details screen, user has a button to add the game to user's wish list.
     * [x] On the details screen, user has a button to add the game to the user's home screen.
     * [x] On the details screen, user can see an area for the game description.
-    * [ ] On the details screen, user can go back to the discover screen.
+    * [x] On the details screen, user can go back to the discover screen.
 * **User can add a game to their home page.**
     * [x] User should be able to see a TableView with rows for their games.
     * [x] Users must be able to see the area with the status for their games.
@@ -68,13 +64,13 @@ Our application, GGTracker, allows users to track their video game catalog as we
     * [ ] User can edit their hours played for their games in the edit screen.
     * [ ] User can edit the status for their games in the edit screen.
 * **User can view the creators of the app.**
-    * [ ] User can tap on settings icon and be brought to the about screen.
     * [x] User can see the Team Penguinos icon.
     * [x] User can view team members' names.
 
 **Optional Nice-to-have Stories**
 
 ---
+* **User stays logged in across restarts.**
 * **User can search for games on the discover page using a search bar.**
 * **User can view the details for a particular game on the discover page.**
 * **User can wishlist a game.**
@@ -90,7 +86,7 @@ Our application, GGTracker, allows users to track their video game catalog as we
     * [x] Secret key must be generated. 
     * [x] Get the game details for a list of top games. 
     * [x] Get the game names for a list of top games.
-    * [ ] Get the game poster for the list of top games.
+    * [x] Get the game poster for the list of top games.
 * **Parse**
     * [x] Parse must be set up.
 
@@ -357,3 +353,58 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
 #### Kyle Deveaux
 * I continued to work on the collection view code. However, I am waiting on and communicating with Siobahn to get the API issue resolved because I cannot fetch the game poster URLs and display them using AlamoFireImage at the current moment. 
 * In the upcoming sprint, I will make the CollectionView work as intended.
+
+
+
+## Sprint 3
+### Progress Descriptions & GIFs
+*This sprint's main goal was completing all of the required functionality for the system. **Please note that the gifs for this week are combined from all of the teammates' work and are at the bottom of this section.***
+
+
+#### Paulina DeVito
+* I worked on making the app icon and logo, debugging the other's code with them, and working on my own code.
+    * List of things I accomplished: 
+        * Created the app icon
+        * Created the app logo
+        * Worked on fixing the home screen code with the help of Siobahn
+        * Worked on formatting and fixing [where needed] Kyle's code for the discover screen
+        * Worked with Kirk to get the discover screen loading images and sending data to the 
+        * Make the keyboard responsive on the login screen so that it will drop down when the user wants to reach the sign in and sign up buttons on the screen that are typically hidden by the keyboard
+        * Worked on a bug on the home screen that would not let you go to the edit screen if you clicked on a TableView cell
+        * Co-authored the code for the edit screen (worked with Kirk)
+
+
+---
+
+#### Siobahn Devlin
+* I worked on managing the git branches and getting everything smoothly merged into the main branch. This proved to be quite challenging with the storyboards and we ended up having to separate each group member's "piece" into its own storyboard on their branch, then push their code up to their respective remote branch. I then downloaded all of their branches onto my machine, merged the code onto my local copy of main while dealing with any merge conflicts (there were so many merge conflicts) and then reassembled all the individual storyboards on the main storyboard file. My new, reassembled main branch was pushed to remote so now all members have a "put together" copy of the project.
+    * List of things I accomplished: 
+        * Helped implement parse functionality for the Home Screen
+        * Merged all team member's individual branches onto the main branch
+        * Fixed all merge conflicts for the above bullet point
+        * Recombined all storyboards back into the main storyboard
+
+
+---
+
+#### Kirk Shields 
+* I worked on creating the function for the API request that would allow me to generate the cover art for the game Detail screen. I was able to set the game cover art on the ViewController. I also integrated the screen with the Discover screen so that the clicked on game would have its details shown. I also allowed users to save their favorite games to the database so that they would be displayed on the Home Screen.
+    * List of things I accomplished: 
+        * Created the function to get the cover art from the API endpoint
+        * Generated the cover art on the Details screen
+        * Allowed users to add games to their favorites or their home screen
+        * Return users from the Details screen back to the Discover screen
+        * Helped Paulina with a bug on the home screen that would not let you go to the edit screen if you clicked on a TableView cell
+        * Co-authored the code for the edit screen (worked with Paulina)
+
+---
+
+#### Kyle Deveaux
+* I worked on integrating the default gg tracker image to the  discover screen. In doing this the gg tracker app has a foundation where the game covers will be displayed. I also worked with paulina to refactor the code to get the discover viewcontroller push to main. Work with kirk to get the discover screen posters in place of the default ggTracker image. 
+    * List of things I accomplished: 
+        * Was able to create dulplicate copys of the viewcontroller
+        * Able to get the poster images on the Discover screen through kirks code
+        * Built a template foundation for the ad video for demo day
+
+<img src="sprint-3-gifs/Sprint-3-1.gif">
+<img src="sprint-3-gifs/Sprint-3-2.gif">
