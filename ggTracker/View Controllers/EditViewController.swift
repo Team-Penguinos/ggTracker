@@ -16,7 +16,7 @@ import AlamofireImage
 class EditViewController: UIViewController {
     
     //MARK: - Global Variables
-    var passedFavoriteGame = PFObject()
+    var passedFavoriteGame : PFObject!
     
     
     //MARK: - Outlets
