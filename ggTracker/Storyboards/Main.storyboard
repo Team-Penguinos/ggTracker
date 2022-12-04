@@ -123,7 +123,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ilm-vX-o5G">
                                 <rect key="frame" x="0.0" y="140" width="390" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UrU-EU-p7x">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UrU-EU-p7x">
                                     <size key="itemSize" width="165" height="228"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -146,6 +146,7 @@
                                         <size key="customSize" width="165" height="228"/>
                                         <connections>
                                             <outlet property="gameImageView" destination="OcG-td-jxx" id="Fbp-Ke-RiV"/>
+                                            <segue destination="cZf-5E-CCm" kind="show" id="gl1-B5-ZhJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -167,10 +168,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system"/>
-                                <connections>
-                                    <segue destination="8Fz-HE-mVQ" kind="show" id="jUq-kG-dNg"/>
-                                </connections>
                             </button>
+                            <connections>
+                                <segue destination="8Fz-HE-mVQ" kind="show" id="m6n-pC-ylQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -264,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TsT-CX-34y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-495" y="1447"/>
+            <point key="canvasLocation" x="-1032" y="1410"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ajI-ob-TYD">
@@ -539,22 +540,7 @@
             </objects>
             <point key="canvasLocation" x="-494" y="-112"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="gpj-uQ-Oxo">
-            <objects>
-                <viewController id="Wle-eo-vx3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SYV-Zs-tMK">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ZPH-MA-9Wz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfe-1o-bnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3178" y="658"/>
-        </scene>
-        <!--Details View Controller-->
+        <!-- -->
         <scene sceneID="NiX-5G-IQ4">
             <objects>
                 <viewController id="cZf-5E-CCm" customClass="DetailsViewController" customModule="ggTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -580,13 +566,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add to Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgX-Th-gVC">
-                                <rect key="frame" x="250" y="334" width="124" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hib-fI-f0K">
                                 <rect key="frame" x="16" y="508" width="358" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -594,38 +573,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T85-RV-60t">
-                                <rect key="frame" x="198" y="333" width="62" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="favor-icon"/>
-                                <connections>
-                                    <action selector="favoriteGame:" destination="cZf-5E-CCm" eventType="touchUpInside" id="ahk-hq-U5Y"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKC-yo-1UA">
-                                <rect key="frame" x="198" y="398" width="62" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="retweet-icon"/>
-                                <connections>
-                                    <action selector="addToHome:" destination="cZf-5E-CCm" eventType="touchUpInside" id="wLh-gQ-qiZ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Game to Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G55-i8-Tet">
-                                <rect key="frame" x="250" y="387" width="124" height="70"/>
+                                <rect key="frame" x="268" y="348" width="124" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ot-SM-A9B">
-                                <rect key="frame" x="158" y="769" width="75" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKC-yo-1UA">
+                                <rect key="frame" x="198" y="358" width="62" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="favor-icon"/>
                                 <connections>
-                                    <action selector="testGame:" destination="cZf-5E-CCm" eventType="touchUpInside" id="YXp-aG-iCJ"/>
+                                    <action selector="addToHome:" destination="cZf-5E-CCm" eventType="touchUpInside" id="wLh-gQ-qiZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -633,49 +594,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Wte-os-SL5">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.backward.fill" catalog="system" id="3Fh-gk-OiV"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title=" " id="qFU-pn-0Vy"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addHomeButton" destination="tKC-yo-1UA" id="D4a-7a-8S9"/>
                         <outlet property="coverView" destination="9Rp-eu-Wee" id="v3R-aa-DYt"/>
                         <outlet property="gameDescription" destination="hib-fI-f0K" id="1MW-cO-V0w"/>
                         <outlet property="gameTitle" destination="h2X-GZ-hRR" id="ak9-Pt-mEv"/>
-                        <outlet property="wishlistButton" destination="T85-RV-60t" id="5xS-el-sFO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jl-7r-Uhr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1455" y="658"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gwr-9N-QYK">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LSI-8I-4Q2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DU6-mt-7qb">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cZf-5E-CCm" kind="relationship" relationship="rootViewController" id="G27-px-5Xm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J25-yt-jrF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2348" y="658"/>
+            <point key="canvasLocation" x="42" y="1410"/>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="image0" width="2048" height="2048"/>
         <image name="iphone.homebutton.landscape" catalog="system" width="128" height="74"/>
-        <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

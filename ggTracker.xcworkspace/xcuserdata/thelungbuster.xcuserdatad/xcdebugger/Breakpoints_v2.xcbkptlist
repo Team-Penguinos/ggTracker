@@ -157,9 +157,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "onUpdateButton(_:)"
-            landmarkType = "7">
+            endingLineNumber = "66">
             <Locations>
                <Location
                   uuid = "AEAFCD51-278B-479F-9017-AD087288F38C - 98f121b41923a847"

@@ -10,26 +10,45 @@ import IGDB_SWIFT_API
 import AlamofireImage
 
 class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+  
+    
 
     //MARK: - Global Variables
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    //instance variable
+    var gameObjects = [Game]()
+    
+    //global variable
+    var apiCaller = IGDB_APICaller()
+    
+    
     
     
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Specifies the number of views in our cell
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
-        //for adding space between cells
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumLineSpacing = 4
-        layout.minimumInteritemSpacing = 4
-        
-        //TODO: Get data.
-        self.collectionView.reloadData()
+        Task.init {
+            do {
+                //load the games in the array
+                gameObjects = try await apiCaller.getTopGames(numOfGames: 5)
+                
+                // Specifies the number of views in our cell
+                collectionView.dataSource = self
+                collectionView.delegate = self
+                
+                //for adding space between cells
+                let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+                layout.minimumLineSpacing = 4
+                layout.minimumInteritemSpacing = 4
+                
+                //TODO: Get data.
+                self.collectionView.reloadData()
+            }
+            catch {
+                print("\(error)")
+            }
+        }
     }
 
     
@@ -37,7 +56,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        //load the first 50 top games from the API
         //FIXME: Might change this to topgames.count.
-        return 50
+        return 5
     }
 
 
@@ -45,6 +64,26 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameGollectionViewCell", for: indexPath) as! gameGollectionViewCell
+        
+        //get the indivdual game
+        let gameInCell = gameObjects[indexPath.row]
+        
+        Task.init {
+            do {
+                //get the cover for the individual game
+                let cover = try await apiCaller.GetCover(gameInCell.id)
+                print("\(cover)")
+                //set the image view using alamo fire image
+                let protoUrl = "https:"
+                let coverPath = cover.url
+                let comUrl = URL(string: protoUrl + coverPath)
+                cell.gameImageView.af.setImage(withURL: comUrl!)
+            }
+            catch {
+                print("\(error)")
+            }
+        }
+
         
         //FIXME: Kyle coded this; we need to see what we can use it for. This references a function in the CollectionView cell file.
         //Games is something in the API
@@ -55,14 +94,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         
         return cell
     }
-
-
-    //MARK: - Layout Function
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 300)
-    }
-    
-    
+        
     //MARK: - On Setting Button
 //    @IBAction func onSettingButton(_ sender: Any) {
 //        //TODO: Make this send the user to the about screen.
@@ -74,6 +106,16 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         print("Loading up the Discover Details Screen.")
+        
+        //find the selected game
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let game = gameObjects[indexPath.row]
+        //Pass selected game to details screen
+        let detailsViewControl = segue.destination as! DetailsViewController
+        detailsViewControl.setGame(game)
+        //deselect the row
+        collectionView.deselectItem(at: indexPath, animated: true)
 //        
 //        //Find the selected game.
 //        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked
@@ -87,5 +129,4 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
 //        collectionView.deselectRow(at: indexPath, animated: true)
         
     }
-    
 }
