@@ -10,14 +10,23 @@ import Parse
 
 class LoginViewController: UIViewController {
     
+    //MARK: - Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    //MARK: - Minimize Keyboard after Typing
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
+    //MARK: - Sign In
     @IBAction func onSignIn(_ sender: Any) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
@@ -31,7 +40,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
+    //MARK: - Sign Out
     @IBAction func onSignUp(_ sender: Any) {
         let user = PFUser()
         user.username = usernameTextField.text
@@ -46,5 +55,5 @@ class LoginViewController: UIViewController {
             
         }
     }
-    
+
 }

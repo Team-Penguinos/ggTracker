@@ -420,20 +420,6 @@
                                     </hierarchicalColors>
                                 </imageReference>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOR-cQ-VOt">
-                                <rect key="frame" x="249" y="171" width="77" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
-                                <menu key="menu" id="Jqy-dM-emi">
-                                    <children>
-                                        <command title="Item 1" id="Sov-bP-56m"/>
-                                        <command title="Item 2" id="83R-ke-Eqo"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Status">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqj-ru-rpW">
                                 <rect key="frame" x="16" y="442" width="278" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -470,6 +456,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="18"/>
                                     <color key="baseBackgroundColor" white="0.20809853480000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onUpdateButton:" destination="NXb-vN-hJU" eventType="touchUpInside" id="8uH-aF-Oul"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/ 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTy-WS-u3I">
                                 <rect key="frame" x="302" y="601" width="34" height="34"/>
@@ -478,15 +467,39 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-8c-sCM">
+                                <rect key="frame" x="237" y="171" width="111" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gL-CI-e44">
+                                <rect key="frame" x="241" y="222" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <menu key="menu" id="Tty-BD-u98">
+                                    <children>
+                                        <command title="Item 1" id="bke-eg-8Tw"/>
+                                        <command title="Item 2" id="ysr-jx-M02"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" title="Status"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1R3-YS-YxL"/>
                         <color key="backgroundColor" white="0.088905490170000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="LgQ-RI-YzD"/>
+                    <connections>
+                        <outlet property="gameImage" destination="7Vr-CW-YwR" id="9iV-DE-2c2"/>
+                        <outlet property="hoursField" destination="9de-GS-e57" id="yCp-ng-8iR"/>
+                        <outlet property="ratingsField" destination="I1h-NM-qw3" id="M4v-16-ePh"/>
+                        <outlet property="statusButton" destination="0gL-CI-e44" id="omS-1P-8xY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hu-R1-bE1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2557" y="657"/>
+            <point key="canvasLocation" x="2556.9230769230767" y="656.87203791469187"/>
         </scene>
         <!--Home-->
         <scene sceneID="kST-Gi-Nze">
