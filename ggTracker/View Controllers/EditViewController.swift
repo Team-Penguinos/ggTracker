@@ -15,6 +15,12 @@ import AlamofireImage
 
 class EditViewController: UIViewController {
     
+    enum UpdateError: String {
+        case hoursError = "Error updating hours"
+        case statusError = "Error updating status"
+        case ratingError = "Error updating rating"
+    }
+    
     //MARK: - Global Variables
     var passedFavoriteGame : PFObject!
     let apiCaller = IGDB_APICaller()
@@ -26,12 +32,9 @@ class EditViewController: UIViewController {
     @IBOutlet weak var hoursField: UITextField!
     @IBOutlet weak var ratingsField: UITextField!
     
-    
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("\(passedFavoriteGame["objectId"])")
     }
     
     
@@ -52,26 +55,57 @@ class EditViewController: UIViewController {
                 print("\(error)")
             }
         }
-        
-        
     }
     
     
     
     
-    func getDataFromScreen()
-    {
+    func getDataFromScreen() {
         //TODO: Get the data from the pull down button and the table view
     }
     
+    private func showSuccessAlert() {
+        let alert = UIAlertController(title: "Success Updating Data",
+                                      message: "The game has been sucessfully updated!",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
+    }
     
-    //Need to pass this a string for status,
-    // a int for hours,
-    // and a int for rating.
+    private func showFailureAlert() {
+        let alert = UIAlertController(title: "Failure Updating Data",
+                                      message: "The game did NOT update correctly",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
+    }
+
     @IBAction func onUpdateButton(_ sender: Any) {
+        let hours = self.hoursField.text
+        let status = self.statusField.text
+        let rating = self.ratingsField.text
        
         let query = PFQuery(className:"FavoriteGames")
-        let objectID = passedFavoriteGame["objectId"] as? String ?? "error"
+        let objectID = passedFavoriteGame.objectId ?? "error retrieving objectId"
+
+    
+        query.includeKeys(["objectId"])
+        
+        query.getObjectInBackground(withId: objectID) { (parseObject, error) in
+            if error != nil {
+                self.showFailureAlert()
+                print("ERROR: \(String(describing: error))")
+            } else if parseObject != nil {
+                //update values in parse
+                parseObject?["Hours"] = hours ?? UpdateError.hoursError
+                parseObject?["Status"] = status ?? UpdateError.statusError
+                parseObject?["Rating"] = rating ?? UpdateError.ratingError
+                parseObject?.saveInBackground()
+                self.showSuccessAlert()
+            }
+        }
     }
     
     
