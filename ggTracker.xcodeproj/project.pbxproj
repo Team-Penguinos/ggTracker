@@ -23,6 +23,7 @@
 		B72AE7512910AD4900470345 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AE7502910AD4900470345 /* HomeViewController.swift */; };
 		B72BF6192919FA7700426AEB /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72BF6182919FA7700426AEB /* EditViewController.swift */; };
 		B756383C2933135A00D9A1F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B756383B2933135A00D9A1F7 /* Main.storyboard */; };
+		B7E8EA34293EF03600A94CBC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E8EA33293EF03500A94CBC /* AboutViewController.swift */; };
 		BD294D4B2920922F003D907E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		BDB93F84292C622D00940863 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB93F83292C622D00940863 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		B72AE7502910AD4900470345 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B72BF6182919FA7700426AEB /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		B756383B2933135A00D9A1F7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B7E8EA33293EF03500A94CBC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		BDB93F83292C622D00940863 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				A06D5F2029330AF800E72C2C /* SettingsViewController.swift */,
 				A0581D2128FB93D900B7A066 /* DiscoverViewController.swift */,
 				B72AE7502910AD4900470345 /* HomeViewController.swift */,
+				B7E8EA33293EF03500A94CBC /* AboutViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				B72AE74F2910AD0300470345 /* HomeCell.swift in Sources */,
 				B72AE7512910AD4900470345 /* HomeViewController.swift in Sources */,
 				BD294D4B2920922F003D907E /* (null) in Sources */,
+				B7E8EA34293EF03600A94CBC /* AboutViewController.swift in Sources */,
 				A0581D2028FB93D900B7A066 /* SceneDelegate.swift in Sources */,
 				A06894BA2919EC02006606F2 /* GameModel.swift in Sources */,
 				A06D5F2129330AF800E72C2C /* SettingsViewController.swift in Sources */,
