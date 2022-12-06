@@ -28,6 +28,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Task.init {
             do {
                 //load the games in the array
@@ -37,10 +38,13 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
                 collectionView.dataSource = self
                 collectionView.delegate = self
                 
-                //for adding space between cells
+                //for adding space/formatting between cells
                 let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-                layout.minimumLineSpacing = 4
-                layout.minimumInteritemSpacing = 4
+                //layout.minimumLineSpacing = 2
+                //layout.minimumInteritemSpacing = 2
+                let width = view.frame.size.width //changes depending on what phone the user is using
+                layout.itemSize = CGSize(width: 90, height: 120)
+                
                 
                 //TODO: Get data.
                 self.collectionView.reloadData()
@@ -56,6 +60,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        //load the first 50 top games from the API
         //FIXME: Might change this to topgames.count.
+        //we already know that return 5 works
         return 5
     }
 
@@ -64,6 +69,9 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameGollectionViewCell", for: indexPath) as! gameGollectionViewCell
+        
+        //make cell have rounded corners
+        cell.layer.cornerRadius = 8
         
         //get the indivdual game
         let gameInCell = gameObjects[indexPath.row]
@@ -77,20 +85,13 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
                 let protoUrl = "https:"
                 let coverPath = cover.url
                 let comUrl = URL(string: protoUrl + coverPath)
+                cell.gameImageView.layer.cornerRadius = 8
                 cell.gameImageView.af.setImage(withURL: comUrl!)
             }
             catch {
                 print("\(error)")
             }
         }
-
-        
-        //FIXME: Kyle coded this; we need to see what we can use it for. This references a function in the CollectionView cell file.
-        //Games is something in the API
-        //cell.setup(with: Game[indexPath.row])
-        
-        //let posterURL = //FIXME: Get the game poster.
-        //cell.gameImageView.af.setImage(withURL: posterURL)
         
         return cell
     }
@@ -116,17 +117,5 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         detailsViewControl.setGame(game)
         //deselect the row
         collectionView.deselectItem(at: indexPath, animated: true)
-//        
-//        //Find the selected game.
-//        let cell = sender as! UICollectionViewCell //the sender is the cell we clicked
-//        let indexPath = collectionView.indexPath(for: cell)!
-//        let game = games[indexPath.row] //now we have found the selected cell //FIXME: games might not be an array. Fix this accordingly.
-//        
-//        //Pass the selected game to the Game Details View Controller.
-//        let gameDetailsViewController = segue.destination as! GameDetailsViewController //FIXME: Change this to the name of Kirk's file.
-//        
-//        //This unhighlights the cell after you view its details and return to this view.
-//        collectionView.deselectRow(at: indexPath, animated: true)
-        
     }
 }

@@ -16,7 +16,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var homeTableView: UITableView!
 
     //MARK: - Global Variables
-    let APICaller = IGDB_APICaller()
     var favoriteGames = [PFObject]()
     var apiCaller = IGDB_APICaller()
     
@@ -80,6 +79,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let protoURL = "https:"
                 let coverPath = cover.url
                 let comURL = URL(string: protoURL + (coverPath ?? "error"))
+                cell.favoriteGameImage.layer.cornerRadius = 8
                 cell.favoriteGameImage.af.setImage(withURL: comURL!)
             }
             catch {
@@ -89,6 +89,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
+
     
     //MARK: - Logout Button Action
     @IBAction func onLogout(_ sender: Any) {

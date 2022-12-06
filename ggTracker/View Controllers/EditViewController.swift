@@ -17,11 +17,12 @@ class EditViewController: UIViewController {
     
     //MARK: - Global Variables
     var passedFavoriteGame : PFObject!
+    let apiCaller = IGDB_APICaller()
     
     
     //MARK: - Outlets
-    @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var gameImage: UIImageView!
+    @IBOutlet weak var statusField: UITextField!
     @IBOutlet weak var hoursField: UITextField!
     @IBOutlet weak var ratingsField: UITextField!
     
@@ -31,20 +32,29 @@ class EditViewController: UIViewController {
         super.viewDidLoad()
 
         print("\(passedFavoriteGame["objectId"])")
-        //for the status pop up button
-        statusButton.changesSelectionAsPrimaryAction = true
-        statusButton.showsMenuAsPrimaryAction = true
-        let optionsClosure = { (action: UIAction) in
-            print(action.title)
-        }
-        statusButton.menu = UIMenu(children: [
-            UIAction(title: "Playing", state: .on, handler: optionsClosure),
-            UIAction(title: "Planning", handler: optionsClosure),
-            UIAction(title: "Finished", handler: optionsClosure)
-        ])
     }
     
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        Task.init {
+            do {
+                //get the cover for the individual game
+                let passedFavoriteGameID = passedFavoriteGame["GameID"] as? Int ?? -1
+                let cover = try await apiCaller.GetCover(passedFavoriteGameID)
+                let protoURL = "https:"
+                let coverPath = cover.url
+                let comURL = URL(string: protoURL + (coverPath ?? "error"))
+                gameImage.af.setImage(withURL: comURL!)
+            }
+            catch {
+                print("\(error)")
+            }
+        }
+        
+        
+    }
     
     
     
@@ -62,18 +72,6 @@ class EditViewController: UIViewController {
        
         let query = PFQuery(className:"FavoriteGames")
         let objectID = passedFavoriteGame["objectId"] as? String ?? "error"
-        
-        query.getObjectInBackground(withId: objectID) {
-            (toBeUpdatedFavoriteGame: PFObject?, error: Error?) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let tobeUpdatedFavoriteGame = toBeUpdatedFavoriteGame {
-                toBeUpdatedFavoriteGame!["Status"] = self.statusButton.titleLabel
-                toBeUpdatedFavoriteGame!["Hours"] = self.hoursField.text
-                toBeUpdatedFavoriteGame!["Rating"] = self.ratingsField.text
-                toBeUpdatedFavoriteGame!.saveInBackground()
-            }
-        }
     }
     
     
