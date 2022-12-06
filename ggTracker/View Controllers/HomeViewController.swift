@@ -47,6 +47,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         print("\(favoriteGames)")
     }
+    
+    //MARK: - TableView Delete Functionality
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let objectToDelete = favoriteGames[indexPath.row]
+            let objectId = objectToDelete.objectId
+
+            favoriteGames.remove(at: indexPath.row)
+            homeTableView.deleteRows(at: [indexPath], with: .fade)
+            homeTableView.reloadData()
+            
+            let query = PFQuery(className:"FavoriteGames")
+    
+            query.getObjectInBackground(withId: objectId ?? "error") {
+              (parseObject, error) -> Void in
+              if error != nil {
+                  print("\(String(describing: error))")
+              } else if parseObject != nil {
+                  parseObject?.deleteInBackground()
+              }
+            }
+        }
+    }
 
     //MARK: - TableView Stub (Row Number)
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
