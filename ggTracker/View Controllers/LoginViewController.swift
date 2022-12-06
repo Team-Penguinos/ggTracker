@@ -25,6 +25,16 @@ class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    //MARK: - Alerts for Fail and Success Case on Login
+    private func showFailureAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
+    }
 
     //MARK: - Sign In
     @IBAction func onSignIn(_ sender: Any) {
@@ -35,6 +45,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 print("Success logging in")
             } else {
+                self.showFailureAlert(title: "Incorrect Username or Password", message: "You did not the correct username or password.")
                 print("Error: \(String(describing: error?.localizedDescription))")
             }
         }
@@ -50,6 +61,7 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 print("Success signing up")
             } else {
+                self.showFailureAlert(title: "Failure Creating Account", message: "Please try creating an account later.")
                 print("Error: \(String(describing: error?.localizedDescription))")
             }
             

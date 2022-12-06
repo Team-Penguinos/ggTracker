@@ -31,15 +31,17 @@ class EditViewController: UIViewController {
     @IBOutlet weak var statusField: UITextField!
     @IBOutlet weak var hoursField: UITextField!
     @IBOutlet weak var ratingsField: UITextField!
+    @IBOutlet weak var gameTitle: UILabel!
     
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    
-    
     override func viewDidAppear(_ animated: Bool) {
+        //load Game title text
+      //  gameTitle.text = passedFavoriteGame[]
+        
         
         Task.init {
             do {
@@ -55,13 +57,6 @@ class EditViewController: UIViewController {
                 print("\(error)")
             }
         }
-    }
-    
-    
-    
-    
-    func getDataFromScreen() {
-        //TODO: Get the data from the pull down button and the table view
     }
     
     private func showSuccessAlert() {
@@ -107,17 +102,4 @@ class EditViewController: UIViewController {
             }
         }
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

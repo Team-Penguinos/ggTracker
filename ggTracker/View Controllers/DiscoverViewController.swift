@@ -22,6 +22,8 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
     //global variable
     var apiCaller = IGDB_APICaller()
     
+    var numOfGames = 20
+    
     
     
     
@@ -32,7 +34,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
         Task.init {
             do {
                 //load the games in the array
-                gameObjects = try await apiCaller.getTopGames(numOfGames: 5)
+                gameObjects = try await apiCaller.getTopGames(numOfGames)
                 
                 // Specifies the number of views in our cell
                 collectionView.dataSource = self
@@ -61,7 +63,7 @@ class DiscoverViewController: UIViewController, UICollectionViewDataSource, UICo
        //load the first 50 top games from the API
         //FIXME: Might change this to topgames.count.
         //we already know that return 5 works
-        return 5
+        return numOfGames
     }
 
 

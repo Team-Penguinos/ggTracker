@@ -89,7 +89,7 @@ class IGDB_APICaller {
         return artworkList
     }
         
-    func getTopGames(numOfGames: Int) async throws -> [Game] {
+    func getTopGames(_ numOfGames: Int) async throws -> [Game] {
         return await withCheckedContinuation { continuation in
             Task.init {
                 do {

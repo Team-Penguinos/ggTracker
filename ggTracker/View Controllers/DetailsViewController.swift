@@ -68,18 +68,16 @@ class DetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    //Button Functions
-    
-    //Change the color on the AddGameToHome button
-    func setAddHomeButton(_ isOnHome:Bool) {
-        blOnHomeScreen = isOnHome
-        if (blOnHomeScreen) {
-            addHomeButton.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
-        }
-        else {
-            addHomeButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
-        }
+    //Alert
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true, completion: nil)
     }
+    
     
     
     //actions
@@ -87,47 +85,31 @@ class DetailsViewController: UIViewController {
     @IBAction func addToHome(_ sender: Any) {
         let toBeOnHome = !blOnHomeScreen
         if (toBeOnHome) {
-            //add to DB
             let gameToAdd = PFObject(className: "FavoriteGames")
             gameToAdd["UserID"] = PFUser.current()
             gameToAdd["GameID"] = curGame?.id
             gameToAdd.saveInBackground { (succeeded, error) in
                 if (succeeded) {
-                    //make the button green
-                    self.setAddHomeButton(true)
+                    self.showAlert(title: "Success", message: "Successfully added game to Home Screen")
                 }
                 else {
-                    print("\(error)")
+                    self.showAlert(title: "Error", message: "Error adding game to Home Screen. Please try again later.")
+                    print("\(String(describing: error))")
                 }
             }
         }
-        else {
-            //delete from DB
-            
-            let query = PFQuery(className: "FavoriteGames")
-            query.includeKeys(["UserID", "GameID"])
-            query.whereKey("GameID", equalTo: curGame?.id)
-            query.limit = 1
-            query.findObjectsInBackground { (game, error) in
-                if (game != nil) {
-                    self.deleteGame = game![0]
-                    self.deleteGame.deleteInBackground()
-                    //make the button grey
-                    self.setAddHomeButton(false)
-                }
-            }
-        }
+        // Removed becasue delete functionality was added to the home screen -Siobahn
+//        else {
+//            let query = PFQuery(className: "FavoriteGames")
+//            query.includeKeys(["UserID", "GameID"])
+//            query.whereKey("GameID", equalTo: curGame?.id)
+//            query.limit = 1
+//            query.findObjectsInBackground { (game, error) in
+//                if (game != nil) {
+//                    self.deleteGame = game![0]
+//                    self.deleteGame.deleteInBackground()
+//                }
+//            }
+//        }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
