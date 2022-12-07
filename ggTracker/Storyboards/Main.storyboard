@@ -125,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ilm-vX-o5G">
-                                <rect key="frame" x="16" y="140" width="358" height="647"/>
+                                <rect key="frame" x="16" y="140" width="358" height="626"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.088905490170000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UrU-EU-p7x">
@@ -136,32 +136,23 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gameGollectionViewCell" id="Lka-a6-XlM" customClass="gameGollectionViewCell" customModule="ggTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qP1-BZ-1Rx">
-                                            <rect key="frame" x="0.0" y="0.0" width="110" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-7x-c1g">
-                                                    <rect key="frame" x="15" y="20" width="80" height="110"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJx-7x-c1g">
+                                                    <rect key="frame" x="5" y="5" width="80" height="110"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.20809853480000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="AHP-4x-tZS"/>
-                                                        <constraint firstAttribute="width" constant="90" id="wK7-O9-YYe"/>
-                                                    </constraints>
                                                     <imageReference key="image" image="image0"/>
                                                 </imageView>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qJx-7x-c1g" firstAttribute="leading" secondItem="qP1-BZ-1Rx" secondAttribute="leading" constant="15" id="Wsv-kg-8tp"/>
-                                                <constraint firstAttribute="trailing" secondItem="qJx-7x-c1g" secondAttribute="trailing" constant="15" id="Xk8-KT-5Gb"/>
-                                                <constraint firstItem="qJx-7x-c1g" firstAttribute="top" secondItem="qP1-BZ-1Rx" secondAttribute="top" constant="20" id="fC5-Ti-SEl"/>
-                                                <constraint firstAttribute="bottom" secondItem="qJx-7x-c1g" secondAttribute="bottom" constant="20" id="fCd-Bo-TT1"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.1268317702" green="0.1268317702" blue="0.1268317702" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <size key="customSize" width="110" height="150"/>
+                                        <size key="customSize" width="90" height="120"/>
                                         <connections>
                                             <outlet property="gameImageView" destination="qJx-7x-c1g" id="Cdg-EQ-R5t"/>
                                             <segue destination="cZf-5E-CCm" kind="show" id="gl1-B5-ZhJ"/>
@@ -187,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgB-wv-rfH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1218" y="657"/>
+            <point key="canvasLocation" x="-1218.4615384615383" y="656.87203791469187"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="GWD-Yl-IZn">
@@ -477,7 +468,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCQ-fD-Bgl">
-                                <rect key="frame" x="138" y="198" width="236" height="46"/>
+                                <rect key="frame" x="138" y="161" width="236" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -572,7 +563,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image0" translatesAutoresizingMaskIntoConstraints="NO" id="9Rp-eu-Wee">
-                                <rect key="frame" x="16" y="194" width="90" height="120"/>
+                                <rect key="frame" x="16" y="140" width="90" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.20809853480000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -584,14 +575,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2X-GZ-hRR">
-                                <rect key="frame" x="16" y="140" width="358" height="46"/>
+                                <rect key="frame" x="184" y="135" width="162" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-nE-bOR">
-                                <rect key="frame" x="16" y="332" width="130" height="35"/>
+                                <rect key="frame" x="16" y="268" width="130" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add to Home">
@@ -602,8 +593,8 @@
                                     <action selector="addToHome:" destination="cZf-5E-CCm" eventType="touchUpInside" id="rqF-Kj-C77"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hib-fI-f0K">
-                                <rect key="frame" x="16" y="397" width="358" height="350"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hib-fI-f0K">
+                                <rect key="frame" x="16" y="344" width="358" height="343"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

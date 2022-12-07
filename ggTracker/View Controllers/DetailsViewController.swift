@@ -41,6 +41,7 @@ class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         Task.init {
             do {
                 if let gameId = curGame?.id {
@@ -50,12 +51,16 @@ class DetailsViewController: UIViewController {
                     //set the title and the description of the box
                     gameTitle.text = curGame?.name
                     gameDescription.text = curGame?.summary
+                    gameDescription.sizeToFit()
                     
                     //set the image view using alamo fire image
                     let protoUrl = "https:"
                     let coverPath = self.curCover?.url
                     let comUrl = URL(string: protoUrl + (coverPath ?? "error"))
                     coverView.af.setImage(withURL: comUrl!)
+                    coverView.layer.cornerRadius = 25
+                    //coverView.clipsToBounds = true
+                    
                 }
                 else {
                     print("you are a bafoon")
@@ -65,7 +70,6 @@ class DetailsViewController: UIViewController {
                 print("\(error)")
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     //Alert
@@ -88,6 +92,7 @@ class DetailsViewController: UIViewController {
             let gameToAdd = PFObject(className: "FavoriteGames")
             gameToAdd["UserID"] = PFUser.current()
             gameToAdd["GameID"] = curGame?.id
+            gameToAdd["GameTitle"] = curGame?.name
             gameToAdd.saveInBackground { (succeeded, error) in
                 if (succeeded) {
                     self.showAlert(title: "Success", message: "Successfully added game to Home Screen")

@@ -39,9 +39,7 @@ class EditViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //load Game title text
-      //  gameTitle.text = passedFavoriteGame[]
-        
+        gameTitle.text = passedFavoriteGame["GameTitle"] as? String ?? "Failed to Game Title"
         
         Task.init {
             do {
