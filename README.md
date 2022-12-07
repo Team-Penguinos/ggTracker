@@ -59,10 +59,10 @@ Our application, GGTracker, allows users to track their video game catalog as we
     * [x] Users must be able to see a settings button in the nav bar.
 * **User can edit their hours, rating, and status for games added to their home page.**
     * [x] User can access the edit screen.
-    * [ ] User can view the game in the edit screen.
-    * [ ] User can edit the status for their games in the edit screen.
-    * [ ] User can edit their hours played for their games in the edit screen.
-    * [ ] User can edit the status for their games in the edit screen.
+    * [x] User can view the game in the edit screen.
+    * [x] User can edit the status for their games in the edit screen.
+    * [x] User can edit their hours played for their games in the edit screen.
+    * [x] User can edit the status for their games in the edit screen.
 * **User can view the creators of the app.**
     * [x] User can see the Team Penguinos icon.
     * [x] User can view team members' names.
@@ -408,3 +408,58 @@ To see all of the individual frames of the digital wireframe more clearly, pleas
 
 <img src="sprint-3-gifs/Sprint-3-1.gif">
 <img src="sprint-3-gifs/Sprint-3-2.gif">
+
+
+## Sprint 4
+### Progress Descriptions & GIFs
+*This sprint's main goal was cleaning up and completing the project as a whole. We completed the project and are very happy about how it came out.*
+
+
+#### Paulina DeVito
+* List of things I accomplished: 
+    * Tried getting a UIKit pop up button to work for the edit screen (did not work, but the attempt was made)
+    * Edited all of the UI to match and look clean 
+    * Got pictures to load on the edit screen
+    * Overhauled the look of the discover screen
+    * Made the about screen accessible via the tab bar 
+    * Fixed the tab bar
+    * Got the logout functionality working
+    * Got the persistence between logins working
+    * Made the images in the app have rounded corners 
+
+
+---
+
+#### Siobahn Devlin
+* List of things I accomplished: 
+    * Got the edit screen to update the data correctly, after much debugging
+    * Got the home screen to have the ability to delete a game by swiping on the table view row 
+    * Added alerts throughout the app
+    * Added error handling code for login
+    * Added secure text entry to login screen
+    * Helped Paulina merge changes from GitHub
+    * Fixed the discover screen look
+    * Fixed details screen description
+    * Got the edit screen to show game titles
+
+
+
+---
+
+#### Kirk Shields 
+* List of things I accomplished: 
+    * Fixed the discover screen 
+    * Fixed button functionality on the discover screen when it 
+    * Helped Paulina with updating, deleting, etc. data from Parse
+
+
+---
+
+#### Kyle Deveaux
+* List of things I accomplished: 
+    * Helping Paulina try to figure out a UIKit pop up button 
+    * Preparing to make an ad for the app for demo day
+
+
+
+<img src="sprint-4-gifs/final.gif">
